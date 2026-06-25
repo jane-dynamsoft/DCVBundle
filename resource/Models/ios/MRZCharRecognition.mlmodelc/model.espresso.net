@@ -1,0 +1,241 @@
+{
+  "storage" : "model.espresso.weights",
+  "analyses" : {
+
+  },
+  "properties" : {
+
+  },
+  "format_version" : 200,
+  "metadata_in_weights" : [
+
+  ],
+  "layers" : [
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "16",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "16",
+      "blob_weights" : 3,
+      "K" : 1,
+      "blob_biases" : 1,
+      "name" : "16",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 10,
+      "bottom" : "input",
+      "weights" : {
+
+      },
+      "Nx" : 5,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 5,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "debug_info" : "21",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "size_x" : 2,
+      "top" : "21",
+      "top_shape_style" : 0,
+      "stride_x" : 2,
+      "avg_or_max" : 1,
+      "average_count_exclude_padding" : 1,
+      "type" : "pool",
+      "name" : "21",
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "bottom" : "16",
+      "weights" : {
+
+      },
+      "pad_mode" : 2,
+      "size_y" : 2,
+      "pad_value" : 0
+    },
+    {
+      "bottom" : "21",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "result.4",
+      "top" : "result.4",
+      "type" : "activation",
+      "name" : "result.4"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "29",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "29",
+      "blob_weights" : 7,
+      "K" : 10,
+      "blob_biases" : 5,
+      "name" : "29",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 20,
+      "bottom" : "result.4",
+      "weights" : {
+
+      },
+      "Nx" : 5,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 5,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "debug_info" : "34",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "size_x" : 2,
+      "top" : "34",
+      "top_shape_style" : 0,
+      "stride_x" : 2,
+      "avg_or_max" : 1,
+      "average_count_exclude_padding" : 1,
+      "type" : "pool",
+      "name" : "34",
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "bottom" : "29",
+      "weights" : {
+
+      },
+      "pad_mode" : 2,
+      "size_y" : 2,
+      "pad_value" : 0
+    },
+    {
+      "bottom" : "34",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "result.8",
+      "top" : "result.8",
+      "type" : "activation",
+      "name" : "result.8"
+    },
+    {
+      "name" : "x2.1",
+      "weights" : {
+
+      },
+      "dst_w" : 500,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 2,
+      "type" : "reshape",
+      "dst_h" : -1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "result.8",
+      "debug_info" : "x2.1",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "x2.1"
+    },
+    {
+      "nB" : 500,
+      "top" : "result.3",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 64,
+      "blob_weights" : 11,
+      "type" : "inner_product",
+      "has_relu" : 1,
+      "bottom" : "x2.1",
+      "blob_biases" : 9,
+      "has_tanh" : 0,
+      "debug_info" : "41",
+      "name" : "41",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 64,
+      "top" : "x4.1",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 37,
+      "blob_weights" : 15,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "result.3",
+      "blob_biases" : 13,
+      "has_tanh" : 0,
+      "debug_info" : "x4.1",
+      "name" : "x4.1",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "x4.1",
+      "weights" : {
+
+      },
+      "nd_axis" : 1,
+      "debug_info" : "ret.1_softmax",
+      "top" : "ret.1_softmax",
+      "type" : "softmax_nd",
+      "name" : "ret.1_softmax"
+    },
+    {
+      "bottom" : "ret.1_softmax",
+      "alpha" : 1,
+      "operation" : 26,
+      "eps" : 1.4012984643248171e-45,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "ret.1",
+      "top" : "ret.1",
+      "type" : "elementwise",
+      "name" : "ret.1",
+      "beta" : 0
+    },
+    {
+      "bottom" : "ret.1",
+      "alpha" : 1,
+      "operation" : 27,
+      "beta" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "output",
+      "top" : "output",
+      "type" : "elementwise",
+      "name" : "output",
+      "attributes" : {
+        "is_output" : 1
+      }
+    }
+  ]
+}

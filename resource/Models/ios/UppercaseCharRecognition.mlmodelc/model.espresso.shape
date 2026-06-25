@@ -1,0 +1,130 @@
+{
+  "layer_shapes" : {
+    "reshape2_0.tmp_0" : {
+      "k" : 1,
+      "w" : 1250,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "p2o.MatMul.1" : {
+      "k" : 1,
+      "w" : 500,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "p2o.Softmax.0_p2o.Add.7_expanded_transposed" : {
+      "k" : 26,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "p2o.Add.7" : {
+      "k" : 1,
+      "w" : 26,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "conv2d_3.tmp_0" : {
+      "k" : 50,
+      "w" : 10,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 10
+    },
+    "p2o.MatMul.3" : {
+      "k" : 1,
+      "w" : 26,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "softmax_1.tmp_0" : {
+      "k" : 1,
+      "w" : 26,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "softmax_1.tmp_0_expanded_transposed_transposed_back" : {
+      "k" : 1,
+      "w" : 26,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "p2o.MaxPool.1" : {
+      "k" : 20,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "p2o.Add.5" : {
+      "k" : 1,
+      "w" : 500,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "conv2d_2.tmp_0" : {
+      "k" : 20,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "linear_1.b_0" : {
+      "k" : 1,
+      "w" : 26,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "data" : {
+      "k" : 1,
+      "w" : 32,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 32
+    },
+    "relu_0.tmp_0" : {
+      "k" : 1,
+      "w" : 500,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "p2o.Softmax.0_p2o.Add.7_expanded" : {
+      "k" : 1,
+      "w" : 26,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "linear_0.b_0" : {
+      "k" : 1,
+      "w" : 500,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "softmax_1.tmp_0_expanded_transposed" : {
+      "k" : 26,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "p2o.MaxPool.3" : {
+      "k" : 50,
+      "w" : 5,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 5
+    }
+  }
+}

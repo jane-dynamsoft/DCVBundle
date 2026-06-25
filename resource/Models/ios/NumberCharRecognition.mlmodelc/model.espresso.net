@@ -1,0 +1,327 @@
+{
+  "storage" : "model.espresso.weights",
+  "analyses" : {
+
+  },
+  "properties" : {
+
+  },
+  "format_version" : 200,
+  "metadata_in_weights" : [
+
+  ],
+  "layers" : [
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "p2o.Conv.0",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "conv2d_2.tmp_0",
+      "blob_weights" : 3,
+      "K" : 1,
+      "blob_biases" : 1,
+      "name" : "p2o.Conv.0",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 20,
+      "bottom" : "data",
+      "weights" : {
+
+      },
+      "Nx" : 5,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 5,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "debug_info" : "p2o.MaxPool.0",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "size_x" : 2,
+      "top" : "p2o.MaxPool.1",
+      "top_shape_style" : 0,
+      "stride_x" : 2,
+      "avg_or_max" : 1,
+      "average_count_exclude_padding" : 1,
+      "type" : "pool",
+      "name" : "p2o.MaxPool.0",
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "bottom" : "conv2d_2.tmp_0",
+      "weights" : {
+
+      },
+      "pad_mode" : 2,
+      "size_y" : 2,
+      "pad_value" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "p2o.Conv.1",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "conv2d_3.tmp_0",
+      "blob_weights" : 7,
+      "K" : 20,
+      "blob_biases" : 5,
+      "name" : "p2o.Conv.1",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 50,
+      "bottom" : "p2o.MaxPool.1",
+      "weights" : {
+
+      },
+      "Nx" : 5,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 5,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "debug_info" : "p2o.MaxPool.2",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "size_x" : 2,
+      "top" : "p2o.MaxPool.3",
+      "top_shape_style" : 0,
+      "stride_x" : 2,
+      "avg_or_max" : 1,
+      "average_count_exclude_padding" : 1,
+      "type" : "pool",
+      "name" : "p2o.MaxPool.2",
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "bottom" : "conv2d_3.tmp_0",
+      "weights" : {
+
+      },
+      "pad_mode" : 2,
+      "size_y" : 2,
+      "pad_value" : 0
+    },
+    {
+      "name" : "p2o.Reshape.4",
+      "weights" : {
+
+      },
+      "dst_w" : 1250,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 2,
+      "type" : "reshape",
+      "dst_h" : -1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "p2o.MaxPool.3",
+      "debug_info" : "p2o.Reshape.4",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "reshape2_0.tmp_0"
+    },
+    {
+      "nB" : 1250,
+      "top" : "p2o.MatMul.1",
+      "has_biases" : 0,
+      "weights" : {
+
+      },
+      "nC" : 500,
+      "blob_weights" : 9,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "reshape2_0.tmp_0",
+      "debug_info" : "p2o.MatMul.0",
+      "has_tanh" : 0,
+      "nd_mode" : true,
+      "name" : "p2o.MatMul.0",
+      "has_prelu" : 0
+    },
+    {
+      "top" : "linear_0.b_0",
+      "w" : 500,
+      "h" : 1,
+      "name" : "p2o.Add.4_load_constant_1",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "p2o.Add.4_load_constant_1",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 11
+    },
+    {
+      "bottom" : "p2o.MatMul.1,linear_0.b_0",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "p2o.Add.4",
+      "nd_mode" : true,
+      "top" : "p2o.Add.5",
+      "type" : "elementwise",
+      "name" : "p2o.Add.4",
+      "beta" : 0
+    },
+    {
+      "bottom" : "p2o.Add.5",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "p2o.Relu.0",
+      "top" : "relu_0.tmp_0",
+      "type" : "activation",
+      "name" : "p2o.Relu.0"
+    },
+    {
+      "nB" : 500,
+      "top" : "p2o.MatMul.3",
+      "has_biases" : 0,
+      "weights" : {
+
+      },
+      "nC" : 10,
+      "blob_weights" : 13,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "relu_0.tmp_0",
+      "debug_info" : "p2o.MatMul.2",
+      "has_tanh" : 0,
+      "nd_mode" : true,
+      "name" : "p2o.MatMul.2",
+      "has_prelu" : 0
+    },
+    {
+      "top" : "linear_1.b_0",
+      "w" : 10,
+      "h" : 1,
+      "name" : "p2o.Add.6_load_constant_1",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "p2o.Add.6_load_constant_1",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 15
+    },
+    {
+      "name" : "p2o.Add.6",
+      "fused_relu" : 0,
+      "beta" : 0,
+      "operation" : 0,
+      "type" : "elementwise",
+      "alpha" : 1,
+      "attributes" : {
+        "is_output" : 1
+      },
+      "bottom" : "p2o.MatMul.3,linear_1.b_0",
+      "debug_info" : "p2o.Add.6",
+      "nd_mode" : true,
+      "weights" : {
+
+      },
+      "top" : "p2o.Add.7"
+    },
+    {
+      "size_of_axes" : 3,
+      "bottom" : "p2o.Add.7",
+      "axes_0" : 0,
+      "axes_1" : 1,
+      "axes_2" : 2,
+      "nd_axis" : 0,
+      "weights" : {
+
+      },
+      "debug_info" : "p2o.Softmax.0_expand_dims",
+      "top" : "p2o.Softmax.0_p2o.Add.7_expanded",
+      "type" : "expand_dims",
+      "name" : "p2o.Softmax.0_expand_dims"
+    },
+    {
+      "axis_h" : 1,
+      "axis_w" : 2,
+      "bottom" : "p2o.Softmax.0_p2o.Add.7_expanded",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "p2o.Softmax.0_transpose",
+      "top" : "p2o.Softmax.0_p2o.Add.7_expanded_transposed",
+      "type" : "transpose",
+      "name" : "p2o.Softmax.0_transpose"
+    },
+    {
+      "bottom" : "p2o.Softmax.0_p2o.Add.7_expanded_transposed",
+      "weights" : {
+
+      },
+      "debug_info" : "p2o.Softmax.0",
+      "top" : "softmax_1.tmp_0_expanded_transposed",
+      "C" : 2,
+      "type" : "softmax",
+      "name" : "p2o.Softmax.0"
+    },
+    {
+      "axis_h" : 1,
+      "axis_w" : 2,
+      "bottom" : "softmax_1.tmp_0_expanded_transposed",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "p2o.Softmax.0_transpose_back",
+      "top" : "softmax_1.tmp_0_expanded_transposed_transposed_back",
+      "type" : "transpose",
+      "name" : "p2o.Softmax.0_transpose_back"
+    },
+    {
+      "weights" : {
+
+      },
+      "version" : 1,
+      "axes_2" : 2,
+      "axes_1" : 1,
+      "type" : "squeeze",
+      "axes_0" : 0,
+      "attributes" : {
+        "is_output" : 1
+      },
+      "nd_axis" : 0,
+      "bottom" : "softmax_1.tmp_0_expanded_transposed_transposed_back",
+      "debug_info" : "p2o.Softmax.0_squeeze_dims",
+      "size_of_axes" : 3,
+      "name" : "p2o.Softmax.0_squeeze_dims",
+      "top" : "softmax_1.tmp_0"
+    }
+  ]
+}
