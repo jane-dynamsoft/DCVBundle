@@ -4243,14 +4243,6 @@ SWIG_From_bool(bool value)
 extern "C"
 {
 #endif
-
-#ifndef FUNC_SCOPE_BEGIN
-#define FUNC_SCOPE_BEGIN do {
-#endif
-#ifndef FUNC_SCOPE_END
-#define FUNC_SCOPE_END } while(0);
-#endif
-
   SWIGINTERN PyObject *_wrap_SimplifiedBarcodeReaderSettings_barcodeFormatIds_set(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -5581,6 +5573,55 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_COneDCodeDetails_startCharsBytes_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::COneDCodeDetails *arg1 = (dynamsoft::dbr::COneDCodeDetails *)0;
+    unsigned char *arg2 = (unsigned char *)0;
+    void *argp1 = 0;
+    int res1 = 0;
+    void *argp2 = 0;
+    int res2 = 0;
+    PyObject *swig_obj[2];
+    Py_ssize_t length;
+    if (!SWIG_Python_UnpackTuple(args, "COneDCodeDetails_startCharsBytes_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__COneDCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "COneDCodeDetails_startCharsBytes_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::COneDCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
+    res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_unsigned_char, SWIG_POINTER_DISOWN | 0);
+    if (!SWIG_IsOK(res2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
+                                               "COneDCodeDetails_startCharsBytes_set"
+                                               "', argument "
+                                               "2"
+                                               " of type '"
+                                               "unsigned char *"
+                                               "'");
+    }
+    length = PyUnicode_GET_LENGTH(swig_obj[1]);
+    arg2 = reinterpret_cast<unsigned char *>(argp2);
+    if (arg1)
+    {
+      (arg1)->startCharsBytes = arg2;
+      (arg1)->startCharsBytesLength = length;
+    }
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_COneDCodeDetails_startCharsBytes_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -5613,6 +5654,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_COneDCodeDetails_startCharsBytesLength_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::COneDCodeDetails *arg1 = (dynamsoft::dbr::COneDCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "COneDCodeDetails_startCharsBytesLength_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__COneDCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "COneDCodeDetails_startCharsBytesLength_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::COneDCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "COneDCodeDetails_startCharsBytesLength_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->startCharsBytesLength = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_COneDCodeDetails_startCharsBytesLength_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -5639,6 +5725,55 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
     result = (int)((arg1)->startCharsBytesLength);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_COneDCodeDetails_stopCharsBytes_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::COneDCodeDetails *arg1 = (dynamsoft::dbr::COneDCodeDetails *)0;
+    unsigned char *arg2 = (unsigned char *)0;
+    void *argp1 = 0;
+    int res1 = 0;
+    void *argp2 = 0;
+    int res2 = 0;
+    PyObject *swig_obj[2];
+    Py_ssize_t length;
+    if (!SWIG_Python_UnpackTuple(args, "COneDCodeDetails_stopCharsBytes_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__COneDCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "COneDCodeDetails_stopCharsBytes_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::COneDCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
+    res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_unsigned_char, SWIG_POINTER_DISOWN | 0);
+    if (!SWIG_IsOK(res2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
+                                               "COneDCodeDetails_stopCharsBytes_set"
+                                               "', argument "
+                                               "2"
+                                               " of type '"
+                                               "unsigned char *"
+                                               "'");
+    }
+    length = PyUnicode_GET_LENGTH(swig_obj[1]);
+    arg2 = reinterpret_cast<unsigned char *>(argp2);
+    if (arg1)
+    {
+      (arg1)->stopCharsBytes = arg2;
+      (arg1)->stopCharsBytesLength = length;
+    }
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -5676,6 +5811,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_COneDCodeDetails_stopCharsBytesLength_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::COneDCodeDetails *arg1 = (dynamsoft::dbr::COneDCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "COneDCodeDetails_stopCharsBytesLength_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__COneDCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "COneDCodeDetails_stopCharsBytesLength_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::COneDCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "COneDCodeDetails_stopCharsBytesLength_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->stopCharsBytesLength = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_COneDCodeDetails_stopCharsBytesLength_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -5702,6 +5882,55 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
     result = (int)((arg1)->stopCharsBytesLength);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_COneDCodeDetails_checkDigitBytes_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::COneDCodeDetails *arg1 = (dynamsoft::dbr::COneDCodeDetails *)0;
+    unsigned char *arg2 = (unsigned char *)0;
+    void *argp1 = 0;
+    int res1 = 0;
+    void *argp2 = 0;
+    int res2 = 0;
+    PyObject *swig_obj[2];
+    Py_ssize_t length;
+    if (!SWIG_Python_UnpackTuple(args, "COneDCodeDetails_checkDigitBytes_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__COneDCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "COneDCodeDetails_checkDigitBytes_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::COneDCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
+    res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_unsigned_char, SWIG_POINTER_DISOWN | 0);
+    if (!SWIG_IsOK(res2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
+                                               "COneDCodeDetails_checkDigitBytes_set"
+                                               "', argument "
+                                               "2"
+                                               " of type '"
+                                               "unsigned char *"
+                                               "'");
+    }
+    length = PyUnicode_GET_LENGTH(swig_obj[1]);
+    arg2 = reinterpret_cast<unsigned char *>(argp2);
+    if (arg1)
+    {
+      (arg1)->checkDigitBytes = arg2;
+      (arg1)->checkDigitBytesLength = length;
+    }
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -5739,6 +5968,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_COneDCodeDetails_checkDigitBytesLength_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::COneDCodeDetails *arg1 = (dynamsoft::dbr::COneDCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "COneDCodeDetails_checkDigitBytesLength_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__COneDCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "COneDCodeDetails_checkDigitBytesLength_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::COneDCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "COneDCodeDetails_checkDigitBytesLength_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->checkDigitBytesLength = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_COneDCodeDetails_checkDigitBytesLength_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -5765,6 +6039,54 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
     result = (int)((arg1)->checkDigitBytesLength);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_COneDCodeDetails_startPatternRange_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::COneDCodeDetails *arg1 = (dynamsoft::dbr::COneDCodeDetails *)0;
+    float *arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    void *argp2 = 0;
+    int res2 = 0;
+    PyObject *swig_obj[2];
+    float *vec;
+    if (!SWIG_Python_UnpackTuple(args, "COneDCodeDetails_startPatternRange_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__COneDCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "COneDCodeDetails_startPatternRange_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::COneDCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
+    vec = convertPythonListToCpp_float(swig_obj[1], 2);
+    if (vec)
+    {
+      size_t ii = 0;
+      for (; ii < (size_t)2; ++ii)
+        *(float *)&arg1->startPatternRange[ii] = vec[ii];
+      delete[] vec, vec = nullptr;
+    }
+    else
+    {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference "
+                                           "in variable '"
+                                           "startPatternRange"
+                                           "' of type '"
+                                           "float [2]"
+                                           "'");
+    }
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -5803,6 +6125,54 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_COneDCodeDetails_middlePatternRange_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::COneDCodeDetails *arg1 = (dynamsoft::dbr::COneDCodeDetails *)0;
+    float *arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    void *argp2 = 0;
+    int res2 = 0;
+    PyObject *swig_obj[2];
+    float *vec;
+    if (!SWIG_Python_UnpackTuple(args, "COneDCodeDetails_middlePatternRange_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__COneDCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "COneDCodeDetails_middlePatternRange_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::COneDCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
+    vec = convertPythonListToCpp_float(swig_obj[1], 2);
+    if (vec)
+    {
+      size_t ii = 0;
+      for (; ii < (size_t)2; ++ii)
+        *(float *)&arg1->middlePatternRange[ii] = vec[ii];
+      delete[] vec, vec = nullptr;
+    }
+    else
+    {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference "
+                                           "in variable '"
+                                           "middlePatternRange"
+                                           "' of type '"
+                                           "float [2]"
+                                           "'");
+    }
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_COneDCodeDetails_middlePatternRange_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -5836,6 +6206,54 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_COneDCodeDetails_endPatternRange_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::COneDCodeDetails *arg1 = (dynamsoft::dbr::COneDCodeDetails *)0;
+    float *arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    void *argp2 = 0;
+    int res2 = 0;
+    PyObject *swig_obj[2];
+    float *vec;
+    if (!SWIG_Python_UnpackTuple(args, "COneDCodeDetails_endPatternRange_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__COneDCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "COneDCodeDetails_endPatternRange_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::COneDCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
+    vec = convertPythonListToCpp_float(swig_obj[1], 2);
+    if (vec)
+    {
+      size_t ii = 0;
+      for (; ii < (size_t)2; ++ii)
+        *(float *)&arg1->endPatternRange[ii] = vec[ii];
+      delete[] vec, vec = nullptr;
+    }
+    else
+    {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference "
+                                           "in variable '"
+                                           "endPatternRange"
+                                           "' of type '"
+                                           "float [2]"
+                                           "'");
+    }
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_COneDCodeDetails_endPatternRange_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -5864,6 +6282,53 @@ extern "C"
     resultobj = convertCppArrayToPython_float(result, 2);
 
     // resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_float, 0 | 0);
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_COneDCodeDetails_reserved_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::COneDCodeDetails *arg1 = (dynamsoft::dbr::COneDCodeDetails *)0;
+    char *arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    char temp2[8];
+    int res2;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "COneDCodeDetails_reserved_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__COneDCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "COneDCodeDetails_reserved_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::COneDCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::COneDCodeDetails *>(argp1);
+    res2 = SWIG_AsCharArray(swig_obj[1], temp2, 8);
+    if (!SWIG_IsOK(res2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
+                                               "COneDCodeDetails_reserved_set"
+                                               "', argument "
+                                               "2"
+                                               " of type '"
+                                               "char [8]"
+                                               "'");
+    }
+    arg2 = reinterpret_cast<char *>(temp2);
+    if (arg2)
+      memcpy(arg1->reserved, arg2, 8 * sizeof(char));
+    else
+      memset(arg1->reserved, 0, 8 * sizeof(char));
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -7153,6 +7618,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_rows_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_rows_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_rows_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_rows_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->rows = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CQRCodeDetails_rows_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -7179,6 +7689,51 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
     result = (int)((arg1)->rows);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_columns_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_columns_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_columns_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_columns_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->columns = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -7215,6 +7770,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_errorCorrectionLevel_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    QRCodeErrorCorrectionLevel arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_errorCorrectionLevel_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_errorCorrectionLevel_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_errorCorrectionLevel_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "QRCodeErrorCorrectionLevel"
+                                                 "'");
+    }
+    arg2 = static_cast<QRCodeErrorCorrectionLevel>(val2);
+    if (arg1)
+      (arg1)->errorCorrectionLevel = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CQRCodeDetails_errorCorrectionLevel_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -7241,6 +7841,51 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
     result = (QRCodeErrorCorrectionLevel)((arg1)->errorCorrectionLevel);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_version_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_version_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_version_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_version_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->version = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -7277,6 +7922,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_model_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_model_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_model_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_model_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->model = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CQRCodeDetails_model_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -7303,6 +7993,51 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
     result = (int)((arg1)->model);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_mode_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_mode_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_mode_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_mode_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->mode = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -7339,6 +8074,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_page_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_page_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_page_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_page_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->page = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CQRCodeDetails_page_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -7365,6 +8145,51 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
     result = (int)((arg1)->page);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_totalPage_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_totalPage_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_totalPage_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_totalPage_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->totalPage = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -7401,6 +8226,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_parityData_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    unsigned char arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    unsigned char val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_parityData_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_parityData_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_unsigned_SS_char(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_parityData_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "unsigned char"
+                                                 "'");
+    }
+    arg2 = static_cast<unsigned char>(val2);
+    if (arg1)
+      (arg1)->parityData = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CQRCodeDetails_parityData_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -7427,6 +8297,51 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
     result = (unsigned char)((arg1)->parityData);
     resultobj = SWIG_From_unsigned_SS_char(static_cast<unsigned char>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_dataMaskPattern_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_dataMaskPattern_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_dataMaskPattern_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_dataMaskPattern_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->dataMaskPattern = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -7463,6 +8378,69 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_codewords_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    char *arg2 = (char *)0;
+    int arg3 = 0;
+    void *argp1 = 0;
+    int res1 = 0;
+    void *argp2 = 0;
+    int res2 = 0;
+    PyObject *swig_obj[2];
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_codewords_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_codewords_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    // res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_unsigned_char, SWIG_POINTER_DISOWN | 0);
+    // if (!SWIG_IsOK(res2))
+    // {
+    //   SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
+    //                                            "CQRCodeDetails_codewords_set"
+    //                                            "', argument "
+    //                                            "2"
+    //                                            " of type '"
+    //                                            "unsigned char *"
+    //                                            "'");
+    // }
+    // arg2 = reinterpret_cast<unsigned char *>(argp2);
+    // length = PyUnicode_GET_LENGTH(swig_obj[1]);
+    arg2 = PyBytes_AsString(swig_obj[1]);
+    arg3 = PyBytes_Size(swig_obj[1]);
+    if (!arg2 || arg3 == 0)
+    {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
+                                               "CQRCodeDetails_codewords_set"
+                                               "', argument "
+                                               "2"
+                                               " of type '"
+                                               "unsigned char *"
+                                               "'");
+    }
+
+    if (arg1)
+    {
+      (arg1)->codewords = new unsigned char[arg3];
+      memcpy((arg1)->codewords, arg2, arg3);
+      (arg1)->codewordsCount = arg3;
+    }
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CQRCodeDetails_codewords_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -7490,6 +8468,51 @@ extern "C"
     result = (unsigned char *)((arg1)->codewords);
     // resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_unsigned_char, 0 | 0);
     resultobj = PyBytes_FromStringAndSize(reinterpret_cast<const char*>(result), (arg1)->codewordsCount);
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CQRCodeDetails_codewordsCount_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CQRCodeDetails *arg1 = (dynamsoft::dbr::CQRCodeDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CQRCodeDetails_codewordsCount_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CQRCodeDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CQRCodeDetails_codewordsCount_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CQRCodeDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CQRCodeDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CQRCodeDetails_codewordsCount_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->codewordsCount = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -8005,6 +9028,51 @@ extern "C"
     return 0;
   }
 
+  SWIGINTERN PyObject *_wrap_CPDF417Details_rows_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CPDF417Details *arg1 = (dynamsoft::dbr::CPDF417Details *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CPDF417Details_rows_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CPDF417Details, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CPDF417Details_rows_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CPDF417Details *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CPDF417Details *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CPDF417Details_rows_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->rows = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CPDF417Details_rows_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -8031,6 +9099,51 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CPDF417Details *>(argp1);
     result = (int)((arg1)->rows);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CPDF417Details_columns_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CPDF417Details *arg1 = (dynamsoft::dbr::CPDF417Details *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CPDF417Details_columns_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CPDF417Details, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CPDF417Details_columns_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CPDF417Details *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CPDF417Details *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CPDF417Details_columns_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->columns = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -8067,6 +9180,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CPDF417Details_errorCorrectionLevel_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CPDF417Details *arg1 = (dynamsoft::dbr::CPDF417Details *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CPDF417Details_errorCorrectionLevel_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CPDF417Details, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CPDF417Details_errorCorrectionLevel_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CPDF417Details *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CPDF417Details *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CPDF417Details_errorCorrectionLevel_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->errorCorrectionLevel = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CPDF417Details_errorCorrectionLevel_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -8098,6 +9256,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CPDF417Details_hasLeftRowIndicator_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CPDF417Details *arg1 = (dynamsoft::dbr::CPDF417Details *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CPDF417Details_hasLeftRowIndicator_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CPDF417Details, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CPDF417Details_hasLeftRowIndicator_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CPDF417Details *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CPDF417Details *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CPDF417Details_hasLeftRowIndicator_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->hasLeftRowIndicator = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CPDF417Details_hasLeftRowIndicator_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -8124,6 +9327,51 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CPDF417Details *>(argp1);
     result = (int)((arg1)->hasLeftRowIndicator);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CPDF417Details_hasRightRowIndicator_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CPDF417Details *arg1 = (dynamsoft::dbr::CPDF417Details *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CPDF417Details_hasRightRowIndicator_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CPDF417Details, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CPDF417Details_hasRightRowIndicator_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CPDF417Details *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CPDF417Details *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CPDF417Details_hasRightRowIndicator_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->hasRightRowIndicator = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -8197,6 +9445,63 @@ extern "C"
     }
 
     return array;
+  }
+SWIGINTERN PyObject *_wrap_CPDF417Details_codewords_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CPDF417Details *arg1 = (dynamsoft::dbr::CPDF417Details *)0;
+    // unsigned int *arg2 = (unsigned int *)0;
+    void *argp1 = 0;
+    int res1 = 0;
+    // void *argp2 = 0;
+    // int res2 = 0;
+    PyObject *swig_obj[2];
+    Py_ssize_t length;
+    if (!SWIG_Python_UnpackTuple(args, "CPDF417Details_codewords_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CPDF417Details, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CPDF417Details_codewords_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CPDF417Details *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CPDF417Details *>(argp1);
+    // res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_unsigned_char, SWIG_POINTER_DISOWN | 0);
+    // if (!SWIG_IsOK(res2))
+    // {
+    //   SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
+    //                                            "CPDF417Details_codewords_set"
+    //                                            "', argument "
+    //                                            "2"
+    //                                            " of type '"
+    //                                            "unsigned char *"
+    //                                            "'");
+    // }
+    // arg2 = reinterpret_cast<unsigned char *>(argp2);
+    // length = PyUnicode_GET_LENGTH(swig_obj[1]);
+    if (arg1)
+    {
+      (arg1)->codewords = parse_python_list_to_uint_array(swig_obj[1], &(arg1)->codewordsCount);
+      if(!(arg1)->codewords)
+      {
+        SWIG_exception_fail(SWIG_TypeError, "in method '"
+                                          "CPDF417Details_codewords_set"
+                                          "', argument "
+                                          "2"
+                                          " of type '"
+                                          "unsigned int *"
+                                          "'");
+      }
+    }
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
   }
   PyObject* uint_array_to_pylist(const unsigned int* array, int length) {
       PyObject* pylist = PyList_New(length);
@@ -8755,6 +10060,51 @@ extern "C"
     return 0;
   }
 
+  SWIGINTERN PyObject *_wrap_CDataMatrixDetails_rows_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CDataMatrixDetails *arg1 = (dynamsoft::dbr::CDataMatrixDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CDataMatrixDetails_rows_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CDataMatrixDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CDataMatrixDetails_rows_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CDataMatrixDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CDataMatrixDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CDataMatrixDetails_rows_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->rows = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CDataMatrixDetails_rows_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -8781,6 +10131,51 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CDataMatrixDetails *>(argp1);
     result = (int)((arg1)->rows);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CDataMatrixDetails_columns_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CDataMatrixDetails *arg1 = (dynamsoft::dbr::CDataMatrixDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CDataMatrixDetails_columns_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CDataMatrixDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CDataMatrixDetails_columns_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CDataMatrixDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CDataMatrixDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CDataMatrixDetails_columns_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->columns = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -8817,6 +10212,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CDataMatrixDetails_dataRegionRows_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CDataMatrixDetails *arg1 = (dynamsoft::dbr::CDataMatrixDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CDataMatrixDetails_dataRegionRows_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CDataMatrixDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CDataMatrixDetails_dataRegionRows_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CDataMatrixDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CDataMatrixDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CDataMatrixDetails_dataRegionRows_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->dataRegionRows = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CDataMatrixDetails_dataRegionRows_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -8848,6 +10288,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CDataMatrixDetails_dataRegionColumns_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CDataMatrixDetails *arg1 = (dynamsoft::dbr::CDataMatrixDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CDataMatrixDetails_dataRegionColumns_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CDataMatrixDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CDataMatrixDetails_dataRegionColumns_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CDataMatrixDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CDataMatrixDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CDataMatrixDetails_dataRegionColumns_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->dataRegionColumns = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CDataMatrixDetails_dataRegionColumns_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -8874,6 +10359,51 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CDataMatrixDetails *>(argp1);
     result = (int)((arg1)->dataRegionColumns);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CDataMatrixDetails_dataRegionNumber_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CDataMatrixDetails *arg1 = (dynamsoft::dbr::CDataMatrixDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CDataMatrixDetails_dataRegionNumber_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CDataMatrixDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CDataMatrixDetails_dataRegionNumber_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CDataMatrixDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CDataMatrixDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CDataMatrixDetails_dataRegionNumber_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->dataRegionNumber = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -9181,6 +10711,51 @@ extern "C"
     return 0;
   }
 
+  SWIGINTERN PyObject *_wrap_CAztecDetails_rows_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CAztecDetails *arg1 = (dynamsoft::dbr::CAztecDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CAztecDetails_rows_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CAztecDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CAztecDetails_rows_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CAztecDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CAztecDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CAztecDetails_rows_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->rows = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CAztecDetails_rows_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -9212,6 +10787,51 @@ extern "C"
     return NULL;
   }
 
+  SWIGINTERN PyObject *_wrap_CAztecDetails_columns_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CAztecDetails *arg1 = (dynamsoft::dbr::CAztecDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CAztecDetails_columns_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CAztecDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CAztecDetails_columns_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CAztecDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CAztecDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CAztecDetails_columns_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->columns = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CAztecDetails_columns_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -9238,6 +10858,51 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CAztecDetails *>(argp1);
     result = (int)((arg1)->columns);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CAztecDetails_layerNumber_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CAztecDetails *arg1 = (dynamsoft::dbr::CAztecDetails *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CAztecDetails_layerNumber_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CAztecDetails, 0 | 0);
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CAztecDetails_layerNumber_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CAztecDetails *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CAztecDetails *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CAztecDetails_layerNumber_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->layerNumber = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -14230,6 +15895,56 @@ extern "C"
     return SWIG_Py_Void();
   }
 
+  SWIGINTERN PyObject *_wrap_CECISegment_eciValue_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CECISegment *arg1 = (dynamsoft::dbr::CECISegment *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    int cst = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CECISegment_eciValue_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_Python_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CECISegment, 0 | 0, 0, &cst);
+    if(cst == SWIG_POINTER_CONST)
+    {
+      SWIG_exception_fail(SWIG_RuntimeError, "This ECISegment instance is read-only and cannot be modified.");
+    }
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CECISegment_eciValue_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CECISegment *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CECISegment *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CECISegment_eciValue_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->eciValue = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
   SWIGINTERN PyObject *_wrap_CECISegment_eciValue_get(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -14258,6 +15973,70 @@ extern "C"
     resultobj = SWIG_From_int(static_cast<int>(result));
     return resultobj;
   fail:
+    return NULL;
+  }
+
+  SWIGINTERN PyObject *_wrap_CECISegment_charsetEncoding_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CECISegment *arg1 = (dynamsoft::dbr::CECISegment *)0;
+    char *arg2 = (char *)0;
+    void *argp1 = 0;
+    int res1 = 0;
+    int res2;
+    char *buf2 = 0;
+    int alloc2 = 0;
+    int cst = 0;
+    char* newChar = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CECISegment_charsetEncoding_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_Python_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CECISegment, 0 | 0, 0, &cst);
+    if(cst == SWIG_POINTER_CONST)
+    {
+      SWIG_exception_fail(SWIG_RuntimeError, "This ECISegment instance is read-only and cannot be modified.");
+    }
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CECISegment_charsetEncoding_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CECISegment *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CECISegment *>(argp1);
+    res2 = SWIG_AsCharPtrAndSize(swig_obj[1], &buf2, NULL, &alloc2);
+    if (!SWIG_IsOK(res2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
+                                               "CECISegment_charsetEncoding_set"
+                                               "', argument "
+                                               "2"
+                                               " of type '"
+                                               "char const *"
+                                               "'");
+    }
+    arg2 = reinterpret_cast<char *>(buf2);
+
+    if(arg1->charsetEncoding)
+      delete[] arg1->charsetEncoding, arg1->charsetEncoding = nullptr;
+    if(arg2)
+    {
+      newChar = new char[strlen(arg2) + 1];
+      strcpy(newChar, arg2);
+      newChar[strlen(arg2)] = '\0';
+      arg1->charsetEncoding = (const char*)newChar;
+    }
+    resultobj = SWIG_Py_Void();
+    if (alloc2 == SWIG_NEWOBJ)
+      delete[] buf2;
+    return resultobj;
+  fail:
+    if (alloc2 == SWIG_NEWOBJ)
+      delete[] buf2;
     return NULL;
   }
 
@@ -14292,6 +16071,55 @@ extern "C"
   fail:
     return NULL;
   }
+  SWIGINTERN PyObject *_wrap_CECISegment_startIndex_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CECISegment *arg1 = (dynamsoft::dbr::CECISegment *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    int cst = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CECISegment_startIndex_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_Python_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CECISegment, 0 | 0, 0, &cst);
+    if(cst == SWIG_POINTER_CONST)
+    {
+      SWIG_exception_fail(SWIG_RuntimeError, "This ECISegment instance is read-only and cannot be modified.");
+    }
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CECISegment_startIndex_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CECISegment *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CECISegment *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CECISegment_startIndex_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->startIndex = arg2;
+    resultobj = SWIG_Py_Void();
+    return resultobj;
+  fail:
+    return NULL;
+  }
 
   SWIGINTERN PyObject *_wrap_CECISegment_startIndex_get(PyObject *self, PyObject *args)
   {
@@ -14319,6 +16147,56 @@ extern "C"
     arg1 = reinterpret_cast<dynamsoft::dbr::CECISegment *>(argp1);
     result = (int)((arg1)->startIndex);
     resultobj = SWIG_From_int(static_cast<int>(result));
+    return resultobj;
+  fail:
+    return NULL;
+  }
+
+    SWIGINTERN PyObject *_wrap_CECISegment_length_set(PyObject *self, PyObject *args)
+  {
+    PyObject *resultobj = 0;
+    dynamsoft::dbr::CECISegment *arg1 = (dynamsoft::dbr::CECISegment *)0;
+    int arg2;
+    void *argp1 = 0;
+    int res1 = 0;
+    int val2;
+    int ecode2 = 0;
+    int cst = 0;
+    PyObject *swig_obj[2];
+
+    if (!SWIG_Python_UnpackTuple(args, "CECISegment_startIndex_set", 2, 2, swig_obj))
+      SWIG_fail;
+    res1 = SWIG_Python_ConvertPtrAndOwn(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__dbr__CECISegment, 0 | 0, 0, &cst);
+    if(cst == SWIG_POINTER_CONST)
+    {
+      SWIG_exception_fail(SWIG_RuntimeError, "This ECISegment instance is read-only and cannot be modified.");
+    }
+    if (!SWIG_IsOK(res1))
+    {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
+                                               "CECISegment_length_set"
+                                               "', argument "
+                                               "1"
+                                               " of type '"
+                                               "dynamsoft::dbr::CECISegment *"
+                                               "'");
+    }
+    arg1 = reinterpret_cast<dynamsoft::dbr::CECISegment *>(argp1);
+    ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+    if (!SWIG_IsOK(ecode2))
+    {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '"
+                                                 "CECISegment_length_set"
+                                                 "', argument "
+                                                 "2"
+                                                 " of type '"
+                                                 "int"
+                                                 "'");
+    }
+    arg2 = static_cast<int>(val2);
+    if (arg1)
+      (arg1)->length = arg2;
+    resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
     return NULL;
@@ -14417,13 +16295,6 @@ extern "C"
     return SWIG_Python_InitShadowInstance(args);
   }
 
-#ifdef FUNC_SCOPE_BEGIN
-#undef FUNC_SCOPE_BEGIN
-#endif
-#ifdef FUNC_SCOPE_END
-#undef FUNC_SCOPE_END
-#endif
-
   static PyMethodDef SwigMethods[] = {
       {"Class_init", SimplifiedBarcodeReaderSettings_swiginit, METH_VARARGS, NULL},
       {"SimplifiedBarcodeReaderSettings_barcodeFormatIds_set", _wrap_SimplifiedBarcodeReaderSettings_barcodeFormatIds_set, METH_VARARGS, NULL},
@@ -14460,56 +16331,92 @@ extern "C"
       // {"CBarcodeDetails_init", CBarcodeDetails_swiginit, METH_VARARGS, NULL},
       {"new_COneDCodeDetails", _wrap_new_COneDCodeDetails, METH_VARARGS, NULL},
       {"delete_COneDCodeDetails", _wrap_delete_COneDCodeDetails, METH_O, NULL},
+      {"COneDCodeDetails_startCharsBytes_set", _wrap_COneDCodeDetails_startCharsBytes_set, METH_VARARGS, NULL},
       {"COneDCodeDetails_startCharsBytes_get", _wrap_COneDCodeDetails_startCharsBytes_get, METH_O, NULL},
+      {"COneDCodeDetails_startCharsBytesLength_set", _wrap_COneDCodeDetails_startCharsBytesLength_set, METH_VARARGS, NULL},
       {"COneDCodeDetails_startCharsBytesLength_get", _wrap_COneDCodeDetails_startCharsBytesLength_get, METH_O, NULL},
+      {"COneDCodeDetails_stopCharsBytes_set", _wrap_COneDCodeDetails_stopCharsBytes_set, METH_VARARGS, NULL},
       {"COneDCodeDetails_stopCharsBytes_get", _wrap_COneDCodeDetails_stopCharsBytes_get, METH_O, NULL},
+      {"COneDCodeDetails_stopCharsBytesLength_set", _wrap_COneDCodeDetails_stopCharsBytesLength_set, METH_VARARGS, NULL},
       {"COneDCodeDetails_stopCharsBytesLength_get", _wrap_COneDCodeDetails_stopCharsBytesLength_get, METH_O, NULL},
+      {"COneDCodeDetails_checkDigitBytes_set", _wrap_COneDCodeDetails_checkDigitBytes_set, METH_VARARGS, NULL},
       {"COneDCodeDetails_checkDigitBytes_get", _wrap_COneDCodeDetails_checkDigitBytes_get, METH_O, NULL},
+      {"COneDCodeDetails_checkDigitBytesLength_set", _wrap_COneDCodeDetails_checkDigitBytesLength_set, METH_VARARGS, NULL},
       {"COneDCodeDetails_checkDigitBytesLength_get", _wrap_COneDCodeDetails_checkDigitBytesLength_get, METH_O, NULL},
+      {"COneDCodeDetails_startPatternRange_set", _wrap_COneDCodeDetails_startPatternRange_set, METH_VARARGS, NULL},
       {"COneDCodeDetails_startPatternRange_get", _wrap_COneDCodeDetails_startPatternRange_get, METH_O, NULL},
+      {"COneDCodeDetails_middlePatternRange_set", _wrap_COneDCodeDetails_middlePatternRange_set, METH_VARARGS, NULL},
       {"COneDCodeDetails_middlePatternRange_get", _wrap_COneDCodeDetails_middlePatternRange_get, METH_O, NULL},
+      {"COneDCodeDetails_endPatternRange_set", _wrap_COneDCodeDetails_endPatternRange_set, METH_VARARGS, NULL},
       {"COneDCodeDetails_endPatternRange_get", _wrap_COneDCodeDetails_endPatternRange_get, METH_O, NULL},
+      {"COneDCodeDetails_reserved_set", _wrap_COneDCodeDetails_reserved_set, METH_VARARGS, NULL},
       {"COneDCodeDetails_reserved_get", _wrap_COneDCodeDetails_reserved_get, METH_O, NULL},
       {"COneDCodeDetails_register", COneDCodeDetails_swigregister, METH_O, NULL},
       // {"COneDCodeDetails_init", COneDCodeDetails_swiginit, METH_VARARGS, NULL},
       {"new_CQRCodeDetails", _wrap_new_CQRCodeDetails, METH_VARARGS, NULL},
       {"delete_CQRCodeDetails", _wrap_delete_CQRCodeDetails, METH_O, NULL},
+      {"CQRCodeDetails_rows_set", _wrap_CQRCodeDetails_rows_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_rows_get", _wrap_CQRCodeDetails_rows_get, METH_O, NULL},
+      {"CQRCodeDetails_columns_set", _wrap_CQRCodeDetails_columns_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_columns_get", _wrap_CQRCodeDetails_columns_get, METH_O, NULL},
+      {"CQRCodeDetails_errorCorrectionLevel_set", _wrap_CQRCodeDetails_errorCorrectionLevel_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_errorCorrectionLevel_get", _wrap_CQRCodeDetails_errorCorrectionLevel_get, METH_O, NULL},
+      {"CQRCodeDetails_version_set", _wrap_CQRCodeDetails_version_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_version_get", _wrap_CQRCodeDetails_version_get, METH_O, NULL},
+      {"CQRCodeDetails_model_set", _wrap_CQRCodeDetails_model_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_model_get", _wrap_CQRCodeDetails_model_get, METH_O, NULL},
+      {"CQRCodeDetails_mode_set", _wrap_CQRCodeDetails_mode_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_mode_get", _wrap_CQRCodeDetails_mode_get, METH_O, NULL},
+      {"CQRCodeDetails_page_set", _wrap_CQRCodeDetails_page_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_page_get", _wrap_CQRCodeDetails_page_get, METH_O, NULL},
+      {"CQRCodeDetails_totalPage_set", _wrap_CQRCodeDetails_totalPage_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_totalPage_get", _wrap_CQRCodeDetails_totalPage_get, METH_O, NULL},
+      {"CQRCodeDetails_parityData_set", _wrap_CQRCodeDetails_parityData_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_parityData_get", _wrap_CQRCodeDetails_parityData_get, METH_O, NULL},
+      {"CQRCodeDetails_dataMaskPattern_set", _wrap_CQRCodeDetails_dataMaskPattern_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_dataMaskPattern_get", _wrap_CQRCodeDetails_dataMaskPattern_get, METH_O, NULL},
+      {"CQRCodeDetails_codewords_set", _wrap_CQRCodeDetails_codewords_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_codewords_get", _wrap_CQRCodeDetails_codewords_get, METH_O, NULL},
+      {"CQRCodeDetails_codewordsCount_set", _wrap_CQRCodeDetails_codewordsCount_set, METH_VARARGS, NULL},
       {"CQRCodeDetails_codewordsCount_get", _wrap_CQRCodeDetails_codewordsCount_get, METH_O, NULL},
       {"CQRCodeDetails_register", CQRCodeDetails_swigregister, METH_O, NULL},
       // {"CQRCodeDetails_init", CQRCodeDetails_swiginit, METH_VARARGS, NULL},
       {"new_CPDF417Details", _wrap_new_CPDF417Details, METH_VARARGS, NULL},
+      {"CPDF417Details_rows_set", _wrap_CPDF417Details_rows_set, METH_VARARGS, NULL},
       {"CPDF417Details_rows_get", _wrap_CPDF417Details_rows_get, METH_O, NULL},
+      {"CPDF417Details_columns_set", _wrap_CPDF417Details_columns_set, METH_VARARGS, NULL},
       {"CPDF417Details_columns_get", _wrap_CPDF417Details_columns_get, METH_O, NULL},
+      {"CPDF417Details_errorCorrectionLevel_set", _wrap_CPDF417Details_errorCorrectionLevel_set, METH_VARARGS, NULL},
       {"CPDF417Details_errorCorrectionLevel_get", _wrap_CPDF417Details_errorCorrectionLevel_get, METH_O, NULL},
+      {"CPDF417Details_hasLeftRowIndicator_set", _wrap_CPDF417Details_hasLeftRowIndicator_set, METH_VARARGS, NULL},
       {"CPDF417Details_hasLeftRowIndicator_get", _wrap_CPDF417Details_hasLeftRowIndicator_get, METH_O, NULL},
+      {"CPDF417Details_hasRightRowIndicator_set", _wrap_CPDF417Details_hasRightRowIndicator_set, METH_VARARGS, NULL},
       {"CPDF417Details_hasRightRowIndicator_get", _wrap_CPDF417Details_hasRightRowIndicator_get, METH_O, NULL},
+      {"CPDF417Details_codewords_set", _wrap_CPDF417Details_codewords_set, METH_VARARGS, NULL},
       {"CPDF417Details_codewords_get", _wrap_CPDF417Details_codewords_get, METH_O, NULL},
       {"delete_CPDF417Details", _wrap_delete_CPDF417Details, METH_O, NULL},
       {"CPDF417Details_register", CPDF417Details_swigregister, METH_O, NULL},
       // {"CPDF417Details_init", CPDF417Details_swiginit, METH_VARARGS, NULL},
       {"new_CDataMatrixDetails", _wrap_new_CDataMatrixDetails, METH_VARARGS, NULL},
+      {"CDataMatrixDetails_rows_set", _wrap_CDataMatrixDetails_rows_set, METH_VARARGS, NULL},
       {"CDataMatrixDetails_rows_get", _wrap_CDataMatrixDetails_rows_get, METH_O, NULL},
+      {"CDataMatrixDetails_columns_set", _wrap_CDataMatrixDetails_columns_set, METH_VARARGS, NULL},
       {"CDataMatrixDetails_columns_get", _wrap_CDataMatrixDetails_columns_get, METH_O, NULL},
+      {"CDataMatrixDetails_dataRegionRows_set", _wrap_CDataMatrixDetails_dataRegionRows_set, METH_VARARGS, NULL},
       {"CDataMatrixDetails_dataRegionRows_get", _wrap_CDataMatrixDetails_dataRegionRows_get, METH_O, NULL},
+      {"CDataMatrixDetails_dataRegionColumns_set", _wrap_CDataMatrixDetails_dataRegionColumns_set, METH_VARARGS, NULL},
       {"CDataMatrixDetails_dataRegionColumns_get", _wrap_CDataMatrixDetails_dataRegionColumns_get, METH_O, NULL},
+      {"CDataMatrixDetails_dataRegionNumber_set", _wrap_CDataMatrixDetails_dataRegionNumber_set, METH_VARARGS, NULL},
       {"CDataMatrixDetails_dataRegionNumber_get", _wrap_CDataMatrixDetails_dataRegionNumber_get, METH_O, NULL},
       {"delete_CDataMatrixDetails", _wrap_delete_CDataMatrixDetails, METH_O, NULL},
       {"CDataMatrixDetails_register", CDataMatrixDetails_swigregister, METH_O, NULL},
       // {"CDataMatrixDetails_init", CDataMatrixDetails_swiginit, METH_VARARGS, NULL},
       {"new_CAztecDetails", _wrap_new_CAztecDetails, METH_VARARGS, NULL},
+      {"CAztecDetails_rows_set", _wrap_CAztecDetails_rows_set, METH_VARARGS, NULL},
       {"CAztecDetails_rows_get", _wrap_CAztecDetails_rows_get, METH_O, NULL},
+      {"CAztecDetails_columns_set", _wrap_CAztecDetails_columns_set, METH_VARARGS, NULL},
       {"CAztecDetails_columns_get", _wrap_CAztecDetails_columns_get, METH_O, NULL},
+      {"CAztecDetails_layerNumber_set", _wrap_CAztecDetails_layerNumber_set, METH_VARARGS, NULL},
       {"CAztecDetails_layerNumber_get", _wrap_CAztecDetails_layerNumber_get, METH_O, NULL},
       {"delete_CAztecDetails", _wrap_delete_CAztecDetails, METH_O, NULL},
       {"CAztecDetails_register", CAztecDetails_swigregister, METH_O, NULL},
@@ -14633,9 +16540,13 @@ extern "C"
       {"new_CECISegment", _wrap_new_CECISegment, METH_NOARGS, NULL},
       {"delete_CECISegment", _wrap_delete_CECISegment, METH_O, NULL},
       {"CECISegment_register", CECISegment_swigregister, METH_O, NULL},
+      {"CECISegment_eciValue_set", _wrap_CECISegment_eciValue_set, METH_VARARGS, NULL},
       {"CECISegment_eciValue_get", _wrap_CECISegment_eciValue_get, METH_O, NULL},
+      {"CECISegment_charsetEncoding_set", _wrap_CECISegment_charsetEncoding_set, METH_VARARGS, NULL},
       {"CECISegment_charsetEncoding_get", _wrap_CECISegment_charsetEncoding_get, METH_O, NULL},
+      {"CECISegment_startIndex_set", _wrap_CECISegment_startIndex_set, METH_VARARGS, NULL},
       {"CECISegment_startIndex_get", _wrap_CECISegment_startIndex_get, METH_O, NULL},
+      {"CECISegment_length_set", _wrap_CECISegment_length_set, METH_VARARGS, NULL},
       {"CECISegment_length_get", _wrap_CECISegment_length_get, METH_O, NULL},
 
       // {"CBarcodeReaderModule_init", CBarcodeReaderModule_swiginit, METH_VARARGS, NULL},

@@ -1,5 +1,5 @@
 #pragma once
-#define DYNAMSOFT_CORE_VERSION "4.6.10.8249"
+#define DYNAMSOFT_CORE_VERSION "4.4.30.8260"
 
 /**Enumeration section*/
 
@@ -154,14 +154,14 @@ typedef enum ErrorCode {
 	/**DynamsoftLabelRecognizer*/
 	/**DynamsoftDocumentNormalizer*/
 	EC_MODULE_NOT_FOUND = -10065,
-
+	
 	/**The api does not support multi-page files. Please use CaptureMultiPages instead.*/
 	EC_MULTI_PAGES_NOT_SUPPORTED = -10066,
 
 	/**The file already exists but overwriting is disabled.*/
 	EC_FILE_ALREADY_EXISTS = -10067,
 
-	/**The file path does not exist but cannot be created, or the file
+	/**The file path does not exist but cannot be created, or the file 
 	cannot be created for any other reason.*/
 	EC_CREATE_FILE_FAILED = -10068,
 
@@ -176,7 +176,7 @@ typedef enum ErrorCode {
 
 	/**The section level result is irreplaceable.*/
 	EC_SECTION_LEVEL_RESULT_IRREPLACEABLE = -10072,
-
+		
 	/**The axis definition is incorrect.*/
 	EC_AXIS_DEFINITION_INCORRECT = -10073,
 
@@ -188,10 +188,10 @@ typedef enum ErrorCode {
 
 	/**The license is initialized successfully but detected invalid content in your key.*/
 	EC_LICENSE_WARNING = -10076,
-
+	
 	/**One or more unsupported JSON keys were encountered and ignored from the template.*/
 	EC_UNSUPPORTED_JSON_KEY_WARNING = -10077,
-
+	
 	/**Model file is not found.*/
 	EC_MODEL_FILE_NOT_FOUND = -10078,
 
@@ -203,7 +203,7 @@ typedef enum ErrorCode {
 
 	/*The template version is incompatible. Please use a compatible template.*/
 	EC_TEMPLATE_VERSION_INCOMPATIBLE = -10081,
-
+	
 	/**The portrait zone could not be located on the identity document.*/
 	EC_PORTRAIT_ZONE_NOT_FOUND = -10082,
 
@@ -243,7 +243,7 @@ typedef enum ErrorCode {
 
 	/**Online license validation failed due to network issues.Using cached license information for validation.*/
 	EC_LICENSE_CACHE_USED = -20012,
-
+		
 	/*License authentication failed: quota exceeded.*/
 	EC_LICENSE_AUTH_QUOTA_EXCEEDED = -20013,
 
@@ -518,9 +518,6 @@ typedef enum PDFReadingMode
 	 * Check the template for available argument settings.*/
 	PDFRM_RASTER = 0x02,
 
-
-	PDFRM_MULTIMODAL = 0x03,
-
 	/**Reserved setting for PDF reading mode.*/
 #if defined(_WIN32) || defined(_WIN64)
 	PDFRM_REV = 0x80000000,
@@ -564,7 +561,7 @@ typedef enum CapturedResultItemType
 
 	/** The type of the CapturedResultItem is "deskewed image". */
 	CRIT_DESKEWED_IMAGE = 16,
-
+	
 	/** The type of the CapturedResultItem is "parsed result". */
 	CRIT_PARSED_RESULT = 32,
 
@@ -577,7 +574,7 @@ typedef enum CapturedResultItemType
 *
 * Describes the protection modes when the buffer of ImageSourceAdapter is overflow.
 */
-typedef enum BufferOverflowProtectionMode
+typedef enum BufferOverflowProtectionMode 
 {
 	/** New images are blocked when the buffer is full. */
 	BOPM_BLOCK = 0x00,
@@ -592,7 +589,7 @@ typedef enum BufferOverflowProtectionMode
 *
 * Describes the type of the image tag, which is used to distinguish video frame and file images.
 */
-typedef enum ImageTagType
+typedef enum ImageTagType 
 {
 	/**The image is a file image.*/
 	ITT_FILE_IMAGE,
@@ -606,7 +603,7 @@ typedef enum ImageTagType
 *
 * Describes the quality of video frames.
 */
-typedef enum VideoFrameQuality
+typedef enum VideoFrameQuality 
 {
 	/**The frame quality is measured to be high.*/
 	VFQ_HIGH,
@@ -623,7 +620,7 @@ typedef enum VideoFrameQuality
 *
 * Describes how the corner is formed by its sides.
 */
-typedef enum CornerType
+typedef enum CornerType 
 {
 	/**The sides of the corner is normally intersected.*/
 	CT_NORMAL_INTERSECTED = 0,
@@ -641,7 +638,7 @@ typedef enum CornerType
 /**
 * @enum SectionType
 *
-* Describes the section of the algorithm.
+* Describes the section of the algorithm. 
 * In the IntermediateResultReceiver, the SectionType indicate the algorithm section that produced the IntermediateResult.
 */
 typedef enum SectionType
@@ -676,7 +673,7 @@ typedef enum SectionType
 /**
 * @enum IntermediateResultUnitType
 *
-* IntermediateResultUnitType is used in each subclass of IntermediateResult to indicate the type of the result.
+* IntermediateResultUnitType is used in each subclass of IntermediateResult to indicate the type of the result. 
 * It is also used to declare which kinds IntermediateResult should be output by the library.
 */
 enum IntermediateResultUnitType : unsigned long long
@@ -764,7 +761,7 @@ enum IntermediateResultUnitType : unsigned long long
 
 	/**The type of the IntermediateResult is "deskewed image".*/
 	IRUT_DESKEWED_IMAGE = 1 << 26,
-
+	
 	/**The type of the IntermediateResult is "short lines".*/
 	IRUT_SHORT_LINES = 1 << 27,
 
@@ -925,15 +922,6 @@ typedef enum ImageFileFormat
 
 }ImageFileFormat;
 
-/**
- * @brief Defines the unit of measurement for spacing and offsets.
- */
-typedef enum MeasureUnit
-{
-	MU_PIXEL = 0,       ///< Measured in absolute pixels.
-	MU_PERCENTAGE = 1   ///< Measured as a percentage of the reference area.
-} MeasureUnit;
-
 /**Structures section*/
 #pragma pack(push)
 #pragma pack(4)
@@ -966,7 +954,7 @@ typedef struct IntermediateResultExtraInfo
 
 #if !defined(_WIN32) && !defined(_WIN64)
 #define DS_API __attribute__((visibility("default")))
-#include <stddef.h>
+#include <stddef.h> 
 #else
 #if defined(DS_EXPORTS)
 #define DS_API __declspec(dllexport)
@@ -979,7 +967,7 @@ typedef struct IntermediateResultExtraInfo
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif	
 	/**
 	 * Gets error message by error code.
 	 *
@@ -1016,7 +1004,7 @@ namespace dynamsoft
 		/**
 		 * A 3x3 matrix that represents an identity matrix.
 		 */
-		const double IDENTITY_MATRIX[9] = {
+		const double IDENTITY_MATRIX[9] = { 
 			1.0, 0.0, 0.0,
 			0.0, 1.0, 0.0,
 			0.0, 0.0, 1.0 };
@@ -1033,7 +1021,7 @@ namespace dynamsoft
 		class DS_API CCoreModule
 		{
 		public:
-
+			
 			/**
 			 * Returns the version of the core module.
 			 *
@@ -1509,7 +1497,7 @@ namespace dynamsoft
 		};
 
 		/**
-		* CEdge is a structure composed of two Corner points in an image.
+		* CEdge is a structure composed of two Corner points in an image. 
 		* A Corner represents a point at which the image's brightness or color sharply changes. Therefore, a CEdge is a line segment connecting two such points that have been identified as Corners.
 		*/
 		class DS_API CEdge
@@ -1604,14 +1592,14 @@ namespace dynamsoft
 		/**
 		* The CImageTag class represents an image tag that can be attached to an image in a system. It contains information about the image, such as the image ID and the image capture distance mode.
 		*/
-		class DS_API CImageTag
+		class DS_API CImageTag 
 		{
 		private:
 			int imageId;
 			ImageCaptureDistanceMode mode;
 		protected:
 			CImageTag();
-		public:
+		public:			
 			/**
 			* Destructor
 			*/
@@ -1669,7 +1657,7 @@ namespace dynamsoft
 		/**
 		* The CFileImageTag class represents an image tag that is associated with a file. It inherits from the CImageTag class and adds two attributes, a file path and a page number.
 		*/
-		class DS_API CFileImageTag : public CImageTag
+		class DS_API CFileImageTag : public CImageTag 
 		{
 		public:
 			/**
@@ -1964,7 +1952,7 @@ namespace dynamsoft
 			*
 			*/
 			void SetImageTag(const CImageTag* _tag);
-
+			
 		private:
 			CImageData(const CImageData&) = delete;
 			CImageData& operator=(const CImageData&) = delete;
@@ -2131,7 +2119,7 @@ namespace dynamsoft
 		/**
 		* The CImageSourceAdapter class provides an interface for fetching and buffering images. It is an abstract class that needs to be implemented by a concrete class to provide actual functionality.
 		*/
-		class DS_API CImageSourceAdapter
+		class DS_API CImageSourceAdapter 
 		{
 		private:
 			class CImageSourceAdapterInner;
@@ -2145,7 +2133,7 @@ namespace dynamsoft
 			* Constructor
 			*/
 			CImageSourceAdapter();
-
+			
 			/**
 			* Adds an image to the buffer of the adapter.
 			*
@@ -2160,7 +2148,7 @@ namespace dynamsoft
 			* Destructor
 			*/
 			virtual ~CImageSourceAdapter();
-
+			
 			/**
 			* Determines whether there are more images left to fetch.
 			*
@@ -2168,7 +2156,7 @@ namespace dynamsoft
 			*
 			*/
 			virtual bool HasNextImageToFetch()const = 0;
-
+			
 			/**
 			* Starts fetching images.
 			*/
@@ -2178,7 +2166,7 @@ namespace dynamsoft
 			* Stops fetching images.
 			*/
 			virtual void StopFetching();
-
+			
 			/**
 			* Returns a buffered image.
 			*
@@ -2186,7 +2174,7 @@ namespace dynamsoft
 			*
 			*/
 			virtual CImageData* GetImage();
-
+			
 			/**
 			* Sets how many images are allowed to be buffered.
 			*
@@ -2228,7 +2216,7 @@ namespace dynamsoft
 			*
 			*/
 			bool HasImage(int imageId)const;
-
+			
 			/**
 			* Sets the next image to return.
 			*
@@ -2256,11 +2244,11 @@ namespace dynamsoft
 			*/
 			bool IsBufferEmpty() const;
 
-			/**
+			/** 
 			 * Clears the buffer.
 			 */
 			void ClearBuffer();
-
+			
 			/**
 			 * Sets the usage type of a color channel in images.
 			 */
@@ -2303,9 +2291,9 @@ namespace dynamsoft
 			* The raster data source.
 			*/
 			RasterDataSource rasterDataSource;
-
+			
 			CPDFReadingParameter() {
-				mode = PDFRM_MULTIMODAL;
+				mode = PDFRM_RASTER;
 				dpi = 300;
 				rasterDataSource = RDS_RASTERIZED_PAGES;
 			}
@@ -2446,7 +2434,7 @@ namespace dynamsoft
 			* Constructor
 			*/
 			CIntermediateResultUnit();
-
+		
 			/**
 			* Destructor
 			*/
@@ -3440,9 +3428,7 @@ namespace dynamsoft
 			*
 			* @remark It is for internal calls of function modules such as DynamsoftBarcodeReader, DynamsoftLabelRecognizer and DynamsoftDocumentNormalizer.
 			*/
-			virtual void OnTaskResultsReceivedInner(CIntermediateResult* pResult, const IntermediateResultExtraInfo* info) = 0;
-
-			virtual void OnSectionStarted(CIntermediateResultUnit* pUnit, const IntermediateResultExtraInfo* info) = 0;
+			virtual void OnTaskResultsReceivedInner(CIntermediateResult *pResult, const IntermediateResultExtraInfo* info) = 0;
 		};
 
 		/**

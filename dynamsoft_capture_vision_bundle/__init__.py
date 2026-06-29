@@ -10,4 +10,4 @@ from .license import *
 from .utility import *
 from .id_utility import *
 
-__version__ = "3.6.1000"
+__version__ = "3.4.3000"

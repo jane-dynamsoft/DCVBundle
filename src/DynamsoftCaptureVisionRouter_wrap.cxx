@@ -3468,9 +3468,8 @@ SwigPyObject_type(void)
 #define SWIGTYPE_p_dynamsoft__ddn__intermediate_results__CLogicLinesUnit swig_types[100]
 #define SWIGTYPE_p_dynamsoft__ddn__intermediate_results__CEnhancedImageUnit swig_types[101]
 #define SWIGTYPE_p_dynamsoft__intermediate_results__CObservationParameters swig_types[102]
-#define SWIGTYPE_p_dynamsoft__utility__CFileFetcher swig_types[103]
-static swig_type_info *swig_types[105];
-static swig_module_info swig_module = {swig_types, 104, 0, 0, 0, 0};
+static swig_type_info *swig_types[104];
+static swig_module_info swig_module = {swig_types, 103, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -7499,37 +7498,6 @@ extern "C"
       }
     }
 
-    void OnBarcodeDecodingSectionStarted(dynamsoft::dbr::intermediate_results::CLocalizedBarcodesUnit* pResult, const IntermediateResultExtraInfo* info) override
-    {
-      if (object)
-      {
-        AutoGIL ag;
-        if (!PyObject_HasAttrString(object, "on_barcode_decoding_section_started"))
-        {
-          PyErr_Clear();
-          return;
-        }
-        PyObject *result = SWIG_NewPointerObj(SWIG_as_voidptr(pResult), SWIGTYPE_p_dynamsoft__dbr__intermediate_results__CLocalizedBarcodesUnit, SWIG_POINTER_OWN | 0);
-        pResult->Retain();
-        PyObject *result2 = SWIG_NewPointerObj(SWIG_as_voidptr(info), SWIGTYPE_p_IntermediateResultExtraInfo, 0 | 0);
-        PyObject *method_result = PyObject_CallMethod(object, "on_barcode_decoding_section_started", "OO", result, result2);
-        if (!method_result)
-        {
-          PyErr_Clear();
-          Py_DECREF(result);
-          Py_DECREF(result2);
-          return;
-        }
-        Py_DECREF(method_result);
-        Py_DECREF(result);
-        Py_DECREF(result2);
-      }
-      else
-      {
-        dynamsoft::cvr::CIntermediateResultReceiver::OnBarcodeDecodingSectionStarted(pResult, info);
-      }
-    }
-
     // virtual const char* GetEncryptedString()
     // {
     //   if (object)
@@ -9723,124 +9691,6 @@ extern "C"
     }
     arg3 = reinterpret_cast<IntermediateResultExtraInfo *>(argp3);
     (arg1)->dynamsoft::cvr::CIntermediateResultReceiver::OnTaskResultsReceivedInner(arg2, (IntermediateResultExtraInfo const *)arg3);
-    resultobj = SWIG_Py_Void();
-    return resultobj;
-  fail:
-    return NULL;
-  }
-
-  SWIGINTERN PyObject *_wrap_CIntermediateResultReceiver_OnSectionStarted(PyObject *self, PyObject *args)
-  {
-    PyObject *resultobj = 0;
-    dynamsoft::cvr::CIntermediateResultReceiver *arg1 = (dynamsoft::cvr::CIntermediateResultReceiver *)0;
-    dynamsoft::intermediate_results::CIntermediateResultUnit *arg2 = (dynamsoft::intermediate_results::CIntermediateResultUnit *)0;
-    IntermediateResultExtraInfo *arg3 = (IntermediateResultExtraInfo *)0;
-    void *argp1 = 0;
-    int res1 = 0;
-    void *argp2 = 0;
-    int res2 = 0;
-    void *argp3 = 0;
-    int res3 = 0;
-    PyObject *swig_obj[3];
-
-    if (!SWIG_Python_UnpackTuple(args, "CIntermediateResultReceiver_OnSectionStarted", 3, 3, swig_obj))
-      SWIG_fail;
-    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__cvr__CIntermediateResultReceiver, 0 | 0);
-    if (!SWIG_IsOK(res1))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
-                                               "CIntermediateResultReceiver_OnSectionStarted"
-                                               "', argument "
-                                               "1"
-                                               " of type '"
-                                               "dynamsoft::cvr::CIntermediateResultReceiver *"
-                                               "'");
-    }
-    arg1 = reinterpret_cast<dynamsoft::cvr::CIntermediateResultReceiver *>(argp1);
-    res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_dynamsoft__intermediate_results__CIntermediateResultUnit, 0 | 0);
-    if (!SWIG_IsOK(res2))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
-                                               "CIntermediateResultReceiver_OnSectionStarted"
-                                               "', argument "
-                                               "2"
-                                               " of type '"
-                                               "dynamsoft::intermediate_results::CIntermediateResultUnit *"
-                                               "'");
-    }
-    arg2 = reinterpret_cast<dynamsoft::intermediate_results::CIntermediateResultUnit *>(argp2);
-    res3 = SWIG_ConvertPtr(swig_obj[2], &argp3, SWIGTYPE_p_IntermediateResultExtraInfo, 0 | 0);
-    if (!SWIG_IsOK(res3))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '"
-                                               "CIntermediateResultReceiver_OnSectionStarted"
-                                               "', argument "
-                                               "3"
-                                               " of type '"
-                                               "IntermediateResultExtraInfo const *"
-                                               "'");
-    }
-    arg3 = reinterpret_cast<IntermediateResultExtraInfo *>(argp3);
-    (arg1)->dynamsoft::cvr::CIntermediateResultReceiver::OnSectionStarted(arg2, (IntermediateResultExtraInfo const *)arg3);
-    resultobj = SWIG_Py_Void();
-    return resultobj;
-  fail:
-    return NULL;
-  }
-
-  SWIGINTERN PyObject *_wrap_CIntermediateResultReceiver_OnBarcodeDecodingSectionStarted(PyObject *self, PyObject *args)
-  {
-    PyObject *resultobj = 0;
-    dynamsoft::cvr::CIntermediateResultReceiver *arg1 = (dynamsoft::cvr::CIntermediateResultReceiver *)0;
-    dynamsoft::dbr::intermediate_results::CLocalizedBarcodesUnit *arg2 = (dynamsoft::dbr::intermediate_results::CLocalizedBarcodesUnit *)0;
-    IntermediateResultExtraInfo *arg3 = (IntermediateResultExtraInfo *)0;
-    void *argp1 = 0;
-    int res1 = 0;
-    void *argp2 = 0;
-    int res2 = 0;
-    void *argp3 = 0;
-    int res3 = 0;
-    PyObject *swig_obj[3];
-
-    if (!SWIG_Python_UnpackTuple(args, "CIntermediateResultReceiver_OnBarcodeDecodingSectionStarted", 3, 3, swig_obj))
-      SWIG_fail;
-    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__cvr__CIntermediateResultReceiver, 0 | 0);
-    if (!SWIG_IsOK(res1))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
-                                               "CIntermediateResultReceiver_OnBarcodeDecodingSectionStarted"
-                                               "', argument "
-                                               "1"
-                                               " of type '"
-                                               "dynamsoft::cvr::CIntermediateResultReceiver *"
-                                               "'");
-    }
-    arg1 = reinterpret_cast<dynamsoft::cvr::CIntermediateResultReceiver *>(argp1);
-    res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_dynamsoft__dbr__intermediate_results__CLocalizedBarcodesUnit, 0 | 0);
-    if (!SWIG_IsOK(res2))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
-                                               "CIntermediateResultReceiver_OnBarcodeDecodingSectionStarted"
-                                               "', argument "
-                                               "2"
-                                               " of type '"
-                                               "dynamsoft::dbr::intermediate_results::CLocalizedBarcodesUnit *"
-                                               "'");
-    }
-    arg2 = reinterpret_cast<dynamsoft::dbr::intermediate_results::CLocalizedBarcodesUnit *>(argp2);
-    res3 = SWIG_ConvertPtr(swig_obj[2], &argp3, SWIGTYPE_p_IntermediateResultExtraInfo, 0 | 0);
-    if (!SWIG_IsOK(res3))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '"
-                                               "CIntermediateResultReceiver_OnBarcodeDecodingSectionStarted"
-                                               "', argument "
-                                               "3"
-                                               " of type '"
-                                               "IntermediateResultExtraInfo const *"
-                                               "'");
-    }
-    arg3 = reinterpret_cast<IntermediateResultExtraInfo *>(argp3);
-    (arg1)->dynamsoft::cvr::CIntermediateResultReceiver::OnBarcodeDecodingSectionStarted(arg2, (IntermediateResultExtraInfo const *)arg3);
     resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
@@ -13734,7 +13584,7 @@ extern "C"
     if (!SWIG_IsOK(res1))
     {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
-                                               "CCaptureVisionRouter_CaptureMultiPages"
+                                               "CCaptureVisionRouter_Capture"
                                                "', argument "
                                                "1"
                                                " of type '"
@@ -13747,7 +13597,7 @@ extern "C"
     if (!arg2||arg3==0)
     {
       SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '"
-                                               "CCaptureVisionRouter_CaptureMultiPages"
+                                               "CCaptureVisionRouter_Capture"
                                                "', argument "
                                                "2"
                                                " of type '"
@@ -13758,7 +13608,7 @@ extern "C"
     if (!SWIG_IsOK(res4))
     {
       SWIG_exception_fail(SWIG_ArgError(res4), "in method '"
-                                               "CCaptureVisionRouter_CaptureMultiPages"
+                                               "CCaptureVisionRouter_Capture"
                                                "', argument "
                                                "3"
                                                " of type '"
@@ -13779,73 +13629,6 @@ extern "C"
       delete[] buf4;
     return NULL;
   }
-
-  SWIGINTERN PyObject *_wrap_CCaptureVisionRouter_CaptureMultiPagesFromFileFetcher(PyObject *self, PyObject *args)
-  {
-    PyObject *resultobj = 0;
-    dynamsoft::cvr::CCaptureVisionRouter *arg1 = (dynamsoft::cvr::CCaptureVisionRouter *)0;
-    dynamsoft::utility::CFileFetcher *arg2 = nullptr;
-    char *arg3 = (char *)0;
-    void *argp1 = 0;
-    int res1 = 0;
-    int res2;
-    int res3;
-    char *buf3 = 0;
-    int alloc3 = 0;
-    PyObject *swig_obj[3];
-    dynamsoft::cvr::CCapturedResultArray* result = (dynamsoft::cvr::CCapturedResultArray*)0;
-    if (!SWIG_Python_UnpackTuple(args, "CCaptureVisionRouter_CaptureMultiPages", 3, 3, swig_obj))
-      SWIG_fail;
-    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__cvr__CCaptureVisionRouter, 0 | 0);
-    if (!SWIG_IsOK(res1))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
-                                               "CCaptureVisionRouter_CaptureMultiPages"
-                                               "', argument "
-                                               "1"
-                                               " of type '"
-                                               "dynamsoft::cvr::CCaptureVisionRouter *"
-                                               "'");
-    }
-    arg1 = reinterpret_cast<dynamsoft::cvr::CCaptureVisionRouter *>(argp1);
-    res2 = SWIG_ConvertPtr(swig_obj[1], &argp1, SWIGTYPE_p_dynamsoft__utility__CFileFetcher, 0 | 0);
-    if (!SWIG_IsOK(res2))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
-                                               "CCaptureVisionRouter_CaptureMultiPages"
-                                               "', argument "
-                                               "2"
-                                               " of type '"
-                                               "char const *"
-                                               "'");
-    }
-    arg2 = reinterpret_cast<dynamsoft::utility::CFileFetcher *>(argp1);
-    res3 = SWIG_AsCharPtrAndSize(swig_obj[2], &buf3, NULL, &alloc3);
-    if (!SWIG_IsOK(res3))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '"
-                                               "CCaptureVisionRouter_CaptureMultiPages"
-                                               "', argument "
-                                               "3"
-                                               " of type '"
-                                               "char const *"
-                                               "'");
-    }
-    arg3 = reinterpret_cast<char *>(buf3);
-    {
-      AutoGILAllow aga;
-      result = (dynamsoft::cvr::CCapturedResultArray*)(arg1)->CaptureMultiPages(arg2, (char const *)arg3);
-    }
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_dynamsoft__cvr__CCapturedResultArray, SWIG_POINTER_OWN | 0);
-    if (alloc3 == SWIG_NEWOBJ)
-      delete[] buf3;
-    return resultobj;
-  fail:
-    if (alloc3 == SWIG_NEWOBJ)
-      delete[] buf3;
-    return NULL;
-  }
-
   SWIGINTERN PyObject *_wrap_CCaptureVisionRouter_SetInput(PyObject *self, PyObject *args)
   {
     PyObject *resultobj = 0;
@@ -15568,8 +15351,6 @@ extern "C"
       // {"CIntermediateResultReceiver_GetEncryptedString", _wrap_CIntermediateResultReceiver_GetEncryptedString, METH_O, NULL},
       // {"CIntermediateResultReceiver_OnUnitResultReceived", _wrap_CIntermediateResultReceiver_OnUnitResultReceived, METH_VARARGS, NULL},
       // {"CIntermediateResultReceiver_OnTaskResultsReceivedInner", _wrap_CIntermediateResultReceiver_OnTaskResultsReceivedInner, METH_VARARGS, NULL},
-      {"CIntermediateResultReceiver_OnSectionStarted", _wrap_CIntermediateResultReceiver_OnSectionStarted, METH_VARARGS, NULL},
-      {"CIntermediateResultReceiver_OnBarcodeDecodingSectionStarted", _wrap_CIntermediateResultReceiver_OnBarcodeDecodingSectionStarted, METH_VARARGS, NULL},
       {"CIntermediateResultReceiver_register", CIntermediateResultReceiver_swigregister, METH_O, NULL},
       {"delete_CIntermediateResultManager", _wrap_delete_CIntermediateResultManager, METH_O, NULL},
       {"CIntermediateResultManager_AddResultReceiver", _wrap_CIntermediateResultManager_AddResultReceiver, METH_VARARGS, NULL},
@@ -15631,7 +15412,6 @@ extern "C"
       {"CCaptureVisionRouter_Capture", _wrap_CCaptureVisionRouter_Capture, METH_VARARGS, NULL},
       {"CCaptureVisionRouter_CaptureMultiPages", _wrap_CCaptureVisionRouter_CaptureMultiPages, METH_VARARGS, NULL},
       {"CCaptureVisionRouter_CaptureMultiPagesFromMemory", _wrap_CCaptureVisionRouter_CaptureMultiPagesFromMemory, METH_VARARGS, NULL},
-      {"CCaptureVisionRouter_CaptureMultiPagesFromFileFetcher", _wrap_CCaptureVisionRouter_CaptureMultiPagesFromFileFetcher, METH_VARARGS, NULL},
       {"CCaptureVisionRouter_SetInput", _wrap_CCaptureVisionRouter_SetInput, METH_VARARGS, NULL},
       {"CCaptureVisionRouter_GetInput", _wrap_CCaptureVisionRouter_GetInput, METH_O, NULL},
       {"CCaptureVisionRouter_AddImageSourceStateListener", _wrap_CCaptureVisionRouter_AddImageSourceStateListener, METH_VARARGS, NULL},
@@ -15959,7 +15739,6 @@ extern "C"
   static swig_type_info _swigt__p_dynamsoft__cvr__CCapturedResultArray = {"_p_dynamsoft__cvr__CCapturedResultArray", "dynamsoft::cvr::CCapturedResultArray *", 0, 0, (void *)0, 0};
   static swig_type_info _swigt__p_dynamsoft__basic_structures__CCapturedResultBase = {"_p_dynamsoft__basic_structures__CCapturedResultBase", "dynamsoft::basic_structures::CCapturedResultBase *", 0, 0, (void *)0, 0};
   static swig_type_info _swigt__p_dynamsoft__intermediate_results__CObservationParameters = {"_p_dynamsoft__intermediate_results__CObservationParameters", "dynamsoft::intermediate_results::CObservationParameters *", 0, 0, (void *)0, 0};
-  static swig_type_info _swigt__p_dynamsoft__utility__CFileFetcher = {"_p_dynamsoft__utility__CFileFetcher", "dynamsoft::utility::CFileFetcher *", 0, 0, (void *)0, 0};
 
   static swig_type_info *swig_type_initial[] = {
       &_swigt__p_BufferOverflowProtectionMode,
@@ -16066,7 +15845,6 @@ extern "C"
       &_swigt__p_dynamsoft__ddn__intermediate_results__CLogicLinesUnit,
       &_swigt__p_dynamsoft__ddn__intermediate_results__CEnhancedImageUnit,
       &_swigt__p_dynamsoft__intermediate_results__CObservationParameters,
-      &_swigt__p_dynamsoft__utility__CFileFetcher,
   };
 
 static swig_cast_info _swigc__p_BufferOverflowProtectionMode[] = {  {&_swigt__p_BufferOverflowProtectionMode, 0, 0, 0},{0, 0, 0, 0}};
@@ -16173,7 +15951,6 @@ static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 
 static swig_cast_info _swigc__p_dynamsoft__cvr__CCapturedResultArray[] = {  {&_swigt__p_dynamsoft__cvr__CCapturedResultArray, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_dynamsoft__basic_structures__CCapturedResultBase[] = {{&_swigt__p_dynamsoft__basic_structures__CCapturedResultBase, 0, 0, 0}, {&_swigt__p_dynamsoft__cvr__CCapturedResult, _p_dynamsoft__cvr__CCapturedResultTo_p_dynamsoft__basic_structures__CCapturedResultBase, 0, 0}, {&_swigt__p_dynamsoft__dbr__CDecodedBarcodesResult, _p_dynamsoft__dbr__CDecodedBarcodesResultTo_p_dynamsoft__basic_structures__CCapturedResultBase, 0, 0}, {&_swigt__p_dynamsoft__dlr__CRecognizedTextLinesResult, _p_dynamsoft__dlr__CRecognizedTextLinesResultTo_p_dynamsoft__basic_structures__CCapturedResultBase, 0, 0}, {&_swigt__p_dynamsoft__ddn__CProcessedDocumentResult, _p_dynamsoft__ddn__CProcessedDocumentResultTo_p_dynamsoft__basic_structures__CCapturedResultBase, 0, 0}, {&_swigt__p_dynamsoft__dcp__CParsedResult, _p_dynamsoft__dcp__CParsedResultTo_p_dynamsoft__basic_structures__CCapturedResultBase, 0, 0}, {0, 0, 0, 0}};
 static swig_cast_info _swigc__p_dynamsoft__intermediate_results__CObservationParameters[] = {{&_swigt__p_dynamsoft__intermediate_results__CObservationParameters, 0, 0, 0}, {0, 0, 0, 0}};
-static swig_cast_info _swigc__p_dynamsoft__utility__CFileFetcher[] = {{&_swigt__p_dynamsoft__utility__CFileFetcher, 0, 0, 0}, {0, 0, 0, 0}};
 
   static swig_cast_info *swig_cast_initial[] = {
       _swigc__p_BufferOverflowProtectionMode,
@@ -16280,7 +16057,6 @@ static swig_cast_info _swigc__p_dynamsoft__utility__CFileFetcher[] = {{&_swigt__
       _swigc__p_dynamsoft__ddn__intermediate_results__CLogicLinesUnit,
       _swigc__p_dynamsoft__ddn__intermediate_results__CEnhancedImageUnit,
       _swigc__p_dynamsoft__intermediate_results__CObservationParameters,
-      _swigc__p_dynamsoft__utility__CFileFetcher,
   };
 
   /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (END) -------- */

@@ -75,7 +75,7 @@ if sys.platform == "linux" or sys.platform == "linux2" or sys.platform == "darwi
     module_dcp = Extension('_DynamsoftCodeParser', ['src/DynamsoftCodeParser_wrap.cxx'], libraries = [dcp_lib_name], **ext_args)
     module_dcpd = Extension('_DynamsoftCodeParserDedicator', ['src/DynamsoftCodeParserDedicator_wrap.cxx'], libraries = [dcpd_lib_name], **ext_args)
     module_ddn = Extension('_DynamsoftDocumentNormalizer', ['src/DynamsoftDocumentNormalizer_wrap.cxx'], libraries = [ddn_lib_name,core_lib_name], **ext_args)
-    module_dip = Extension('_DynamsoftImageProcessing', ['src/DynamsoftImageProcessing_wrap.cxx'], libraries = [dip_lib_name,core_lib_name], **ext_args)
+    module_dip = Extension('_DynamsoftImageProcessing', ['src/DynamsoftImageProcessing_wrap.cxx'], libraries = [dip_lib_name], **ext_args)
     module_dlr = Extension('_DynamsoftLabelRecognizer', ['src/DynamsoftLabelRecognizer_wrap.cxx'], libraries = [dlr_lib_name,core_lib_name], **ext_args)
     module_license = Extension('_DynamsoftLicense', ['src/DynamsoftLicense_wrap.cxx'], libraries = [license_lib_name,core_lib_name], **ext_args)
     module_utility = Extension('_DynamsoftUtility', ['src/DynamsoftUtility_wrap.cxx'], libraries = [utility_lib_name,core_lib_name], **ext_args)
@@ -88,7 +88,7 @@ else:
     module_dcp = Extension('_DynamsoftCodeParser', sources=['src/DynamsoftCodeParser_wrap.cxx'], include_dirs=['include'], library_dirs=[lib_dir],libraries=[dcp_lib_name])
     module_dcpd = Extension('_DynamsoftCodeParserDedicator', sources=['src/DynamsoftCodeParserDedicator_wrap.cxx'], include_dirs=['include'], library_dirs=[lib_dir],libraries=[dcpd_lib_name])
     module_ddn = Extension('_DynamsoftDocumentNormalizer', sources=['src/DynamsoftDocumentNormalizer_wrap.cxx'], include_dirs=['include'], library_dirs=[lib_dir],libraries=[ddn_lib_name,core_lib_name])
-    module_dip = Extension('_DynamsoftImageProcessing', sources=['src/DynamsoftImageProcessing_wrap.cxx'], include_dirs=['include'], library_dirs=[lib_dir],libraries=[dip_lib_name,core_lib_name])
+    module_dip = Extension('_DynamsoftImageProcessing', sources=['src/DynamsoftImageProcessing_wrap.cxx'], include_dirs=['include'], library_dirs=[lib_dir],libraries=[dip_lib_name])
     module_dlr = Extension('_DynamsoftLabelRecognizer', sources=['src/DynamsoftLabelRecognizer_wrap.cxx'], include_dirs=['include'], library_dirs=[lib_dir],libraries=[dlr_lib_name,core_lib_name])
     module_license = Extension('_DynamsoftLicense', sources=['src/DynamsoftLicense_wrap.cxx'], include_dirs=['include'], library_dirs=[lib_dir],libraries=[license_lib_name,core_lib_name],extra_compile_args=['-DBUILD_BUNDLE=1'])
     module_utility = Extension('_DynamsoftUtility', sources=['src/DynamsoftUtility_wrap.cxx'], include_dirs=['include'], library_dirs=[lib_dir],libraries=[utility_lib_name,core_lib_name])
@@ -152,7 +152,7 @@ class CustomInstall(install):
         install.run(self)
 
 setup (name = 'dynamsoft_capture_vision_bundle',
-            version = '3.6.1000',
+            version = '3.4.3000',
             description = 'Dynamsoft Capture Vision Bundle',
             long_description=long_description,
             long_description_content_type="text/x-rst",

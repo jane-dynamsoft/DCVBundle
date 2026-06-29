@@ -11,7 +11,7 @@
 #endif
 #include "DynamsoftCore.h"
 
-#define DCP_VERSION "3.6.10.8249"
+#define DCP_VERSION "3.4.30.8260"
 /**
  * @enum MappingStatus 
  *

@@ -1,4 +1,4 @@
-__version__ = "11.6.10.0625"
+__version__ = "11.4.30.1265"
 
 if __package__ or "." in __name__:
     from .core import *
@@ -214,7 +214,7 @@ class SimplifiedBarcodeReaderSettings:
     def deblur_modes(self) -> List[int]:
         """
         Specifies the mode and priority for deblurring.
-        It is a list of 10 integers, where each integer represents a mode specified by the EnumDeblurMode enumeration.
+        It is a list of 8 integers, where each integer represents a mode specified by the EnumDeblurMode enumeration.
         """
         if not hasattr(self, "_deblur_modes") or self._deblur_modes is None:
             self._deblur_modes = _DynamsoftBarcodeReader.SimplifiedBarcodeReaderSettings_deblurModes_get(self)
@@ -348,18 +348,22 @@ class OneDCodeDetails(BarcodeDetails):
     __destroy__ = _DynamsoftBarcodeReader.delete_COneDCodeDetails
     start_chars_bytes: bytes = property(
         _DynamsoftBarcodeReader.COneDCodeDetails_startCharsBytes_get,
+        _DynamsoftBarcodeReader.COneDCodeDetails_startCharsBytes_set,
         doc="The start chars of the one-dimensional barcode in a byte array.",
     )
     stop_chars_bytes: bytes = property(
         _DynamsoftBarcodeReader.COneDCodeDetails_stopCharsBytes_get,
+        _DynamsoftBarcodeReader.COneDCodeDetails_stopCharsBytes_set,
         doc="The stop chars of the one-dimensional barcode in a byte array.",
     )
     check_digit_bytes: bytes = property(
         _DynamsoftBarcodeReader.COneDCodeDetails_checkDigitBytes_get,
+        _DynamsoftBarcodeReader.COneDCodeDetails_checkDigitBytes_set,
         doc="The check digit chars of the one-dimensional barcode in a byte array.",
     )
     start_pattern_range: List[float] = property(
         _DynamsoftBarcodeReader.COneDCodeDetails_startPatternRange_get,
+        _DynamsoftBarcodeReader.COneDCodeDetails_startPatternRange_set,
         doc="""
             The position of the start pattern relative to the barcode location.
             The property represents a float list of length 2:
@@ -369,6 +373,7 @@ class OneDCodeDetails(BarcodeDetails):
     )
     middle_pattern_range: List[float] = property(
         _DynamsoftBarcodeReader.COneDCodeDetails_middlePatternRange_get,
+        _DynamsoftBarcodeReader.COneDCodeDetails_middlePatternRange_set,
         doc="""
             The position of the middle pattern relative to the barcode location.
             The property represents a float list of length 2:
@@ -378,6 +383,7 @@ class OneDCodeDetails(BarcodeDetails):
     )
     end_pattern_range: List[float] = property(
         _DynamsoftBarcodeReader.COneDCodeDetails_endPatternRange_get,
+        _DynamsoftBarcodeReader.COneDCodeDetails_endPatternRange_set,
         doc="""
             The position of the end pattern relative to the barcode location.
             The property represents a float list of length 2:
@@ -445,36 +451,47 @@ class QRCodeDetails(BarcodeDetails):
     __destroy__ = _DynamsoftBarcodeReader.delete_CQRCodeDetails
     rows: int = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_rows_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_rows_set,
     )
     columns: int = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_columns_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_columns_set,
     )
     error_correction_level: int = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_errorCorrectionLevel_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_errorCorrectionLevel_set,
     )
     version: int = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_version_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_version_set,
     )
     model: int = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_model_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_model_set,
     )
     mode: int = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_mode_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_mode_set,
     )
     page: int = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_page_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_page_set,
     )
     total_page: int = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_totalPage_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_totalPage_set,
     )
     parity_data: int = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_parityData_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_parityData_set,
     )
     data_mask_pattern: int = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_dataMaskPattern_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_dataMaskPattern_set,
     )
     codewords: bytes = property(
         _DynamsoftBarcodeReader.CQRCodeDetails_codewords_get,
+        _DynamsoftBarcodeReader.CQRCodeDetails_codewords_set,
     )
 
 
@@ -519,26 +536,32 @@ class PDF417Details(BarcodeDetails):
 
     rows: int = property(
         _DynamsoftBarcodeReader.CPDF417Details_rows_get,
+        _DynamsoftBarcodeReader.CPDF417Details_rows_set,
         doc="The number of rows in the PDF417 barcode.",
     )
     columns: int = property(
         _DynamsoftBarcodeReader.CPDF417Details_columns_get,
+        _DynamsoftBarcodeReader.CPDF417Details_columns_set,
         doc="The number of columns in the PDF417 barcode.",
     )
     error_correction_level: int = property(
         _DynamsoftBarcodeReader.CPDF417Details_errorCorrectionLevel_get,
+        _DynamsoftBarcodeReader.CPDF417Details_errorCorrectionLevel_set,
         doc="The error correction level of PDF417 code.",
     )
     has_left_row_indicator: int = property(
         _DynamsoftBarcodeReader.CPDF417Details_hasLeftRowIndicator_get,
+        _DynamsoftBarcodeReader.CPDF417Details_hasLeftRowIndicator_set,
         doc="Specifies whether the left row indicator of the PDF417 code exists.",
     )
     has_right_row_indicator: int = property(
         _DynamsoftBarcodeReader.CPDF417Details_hasRightRowIndicator_get,
+        _DynamsoftBarcodeReader.CPDF417Details_hasRightRowIndicator_set,
         doc="Specifies whether the right row indicator of the PDF417 code exists.",
     )
     codewords: List[int] = property(
         _DynamsoftBarcodeReader.CPDF417Details_codewords_get,
+        _DynamsoftBarcodeReader.CPDF417Details_codewords_set,
     )
 
     __destroy__ = _DynamsoftBarcodeReader.delete_CPDF417Details
@@ -584,22 +607,27 @@ class DataMatrixDetails(BarcodeDetails):
 
     rows: int = property(
         _DynamsoftBarcodeReader.CDataMatrixDetails_rows_get,
+        _DynamsoftBarcodeReader.CDataMatrixDetails_rows_set,
         doc="The row count of the DataMatrix barcode.",
     )
     columns: int = property(
         _DynamsoftBarcodeReader.CDataMatrixDetails_columns_get,
+        _DynamsoftBarcodeReader.CDataMatrixDetails_columns_set,
         doc="The column count of the DataMatrix barcode.",
     )
     data_region_rows: int = property(
         _DynamsoftBarcodeReader.CDataMatrixDetails_dataRegionRows_get,
+        _DynamsoftBarcodeReader.CDataMatrixDetails_dataRegionRows_set,
         doc="The data region row count of the DataMatrix barcode.",
     )
     data_region_columns: int = property(
         _DynamsoftBarcodeReader.CDataMatrixDetails_dataRegionColumns_get,
+        _DynamsoftBarcodeReader.CDataMatrixDetails_dataRegionColumns_set,
         doc="The data region column count of the DataMatrix barcode.",
     )
     data_region_number: int  = property(
         _DynamsoftBarcodeReader.CDataMatrixDetails_dataRegionNumber_get,
+        _DynamsoftBarcodeReader.CDataMatrixDetails_dataRegionNumber_set,
         doc="The data region count.",
     )
     __destroy__ = _DynamsoftBarcodeReader.delete_CDataMatrixDetails
@@ -627,14 +655,17 @@ class AztecDetails(BarcodeDetails):
 
     rows: int = property(
         _DynamsoftBarcodeReader.CAztecDetails_rows_get,
+        _DynamsoftBarcodeReader.CAztecDetails_rows_set,
         doc="The number of rows in the Aztec barcode.",
     )
     columns: int = property(
         _DynamsoftBarcodeReader.CAztecDetails_columns_get,
+        _DynamsoftBarcodeReader.CAztecDetails_columns_set,
         doc="The number of columns in the Aztec barcode.",
     )
     layer_number: int = property(
         _DynamsoftBarcodeReader.CAztecDetails_layerNumber_get,
+        _DynamsoftBarcodeReader.CAztecDetails_layerNumber_set,
         doc="Specifies the layer number of the Aztec barcode. A negative number (-1, -2, -3, -4) specifies a compact Aztec code. A positive number (1, 2, .. 32) specifies a normal (full-range) Aztec code.",
     )
     __destroy__ = _DynamsoftBarcodeReader.delete_CAztecDetails
@@ -656,18 +687,22 @@ class ECISegment:
     )
     eci_value: int = property(
         _DynamsoftBarcodeReader.CECISegment_eciValue_get,
+        _DynamsoftBarcodeReader.CECISegment_eciValue_set,
         doc="ECI assignment number as defined by ISO/IEC 15424.",
     )
     charset_encoding: str = property(
         _DynamsoftBarcodeReader.CECISegment_charsetEncoding_get,
+        _DynamsoftBarcodeReader.CECISegment_charsetEncoding_set,
         doc="Charset encoding name defined by IANA (e.g. \"UTF-8\", \"ISO-8859-1\").",
     )
     start_index: int = property(
         _DynamsoftBarcodeReader.CECISegment_startIndex_get,
+        _DynamsoftBarcodeReader.CECISegment_startIndex_set,
         doc="Start index of this ECI segment in the decoded barcode bytes.",
     )
     length: int = property(
         _DynamsoftBarcodeReader.CECISegment_length_get,
+        _DynamsoftBarcodeReader.CECISegment_length_set,
         doc="Length (in bytes) of this segment within the decoded barcode bytes.",
     )
     def __init__(self):

@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dynamsoft_capture_vision_bundle"
-version = "3.6.1000"
+version = "3.4.3000"
 description = "Dynamsoft Capture Vision Bundle"
 readme = { file = "README.rst", content-type = "text/x-rst" } 
 

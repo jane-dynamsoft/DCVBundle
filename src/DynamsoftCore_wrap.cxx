@@ -3436,10 +3436,9 @@ SwigPyObject_type(void)
 #define SWIGTYPE_p_unsigned_char swig_types[65]
 #define SWIGTYPE_p_dynamsoft__basic_structures__CCapturedResultBase swig_types[66]
 #define SWIGTYPE_p_dynamsoft__intermediate_results__CAuxiliaryRegionElement swig_types[67]
-#define SWIGTYPE_p_MeasureUnit swig_types[68]
 
-static swig_type_info *swig_types[70];
-static swig_module_info swig_module = {swig_types, 69, 0, 0, 0, 0};
+static swig_type_info *swig_types[69];
+static swig_module_info swig_module = {swig_types, 68, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -17725,35 +17724,6 @@ SWIGINTERN PyObject *_wrap_COriginalImageResultItem_Release(PyObject *self, PyOb
     {
 
     }
-
-    void OnSectionStarted(dynamsoft::intermediate_results::CIntermediateResultUnit* pUnit, const IntermediateResultExtraInfo* info) override
-    {
-      if (object)
-      {
-        AutoGIL ag;
-        if (!PyObject_HasAttrString(object, "on_section_started"))
-        {
-          PyErr_Clear();
-          return;
-        }
-        PyObject *result = SWIG_NewPointerObj(SWIG_as_voidptr(pUnit), SWIGTYPE_p_dynamsoft__intermediate_results__CIntermediateResultUnit, 0 | 0);
-        PyObject *info_arg = SWIG_NewPointerObj(SWIG_as_voidptr(info), SWIGTYPE_p_IntermediateResultExtraInfo, 0 | 0);
-        PyObject *method_result = PyObject_CallMethod(object, "on_section_started", "OO", result, info_arg);
-        if (!method_result)
-        {
-          PyErr_Clear();
-          Py_DECREF(result);
-          Py_DECREF(info_arg);
-          return;
-        }
-        Py_DECREF(method_result);
-        Py_DECREF(result);
-        Py_DECREF(info_arg);
-        return;
-      }
-      return;
-    }
-
   protected:
     PyObject *object{nullptr};
   };
@@ -18003,65 +17973,6 @@ SWIGINTERN PyObject *_wrap_COriginalImageResultItem_Release(PyObject *self, PyOb
     }
     arg3 = reinterpret_cast<IntermediateResultExtraInfo *>(argp3);
     (arg1)->OnTaskResultsReceivedInner(arg2, (IntermediateResultExtraInfo const *)arg3);
-    resultobj = SWIG_Py_Void();
-    return resultobj;
-  fail:
-    return NULL;
-  }
-
-  SWIGINTERN PyObject *_wrap_CAbstractIntermediateResultReceiver_OnSectionStarted(PyObject *self, PyObject *args)
-  {
-    PyObject *resultobj = 0;
-    dynamsoft::intermediate_results::CAbstractIntermediateResultReceiver *arg1 = (dynamsoft::intermediate_results::CAbstractIntermediateResultReceiver *)0;
-    dynamsoft::intermediate_results::CIntermediateResultUnit *arg2 = (dynamsoft::intermediate_results::CIntermediateResultUnit *)0;
-    IntermediateResultExtraInfo *arg3 = (IntermediateResultExtraInfo *)0;
-    void *argp1 = 0;
-    int res1 = 0;
-    void *argp2 = 0;
-    int res2 = 0;
-    void *argp3 = 0;
-    int res3 = 0;
-    PyObject *swig_obj[3];
-
-    if (!SWIG_Python_UnpackTuple(args, "CAbstractIntermediateResultReceiver_OnSectionStarted", 3, 3, swig_obj))
-      SWIG_fail;
-    res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_dynamsoft__intermediate_results__CAbstractIntermediateResultReceiver, 0 | 0);
-    if (!SWIG_IsOK(res1))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '"
-                                               "CAbstractIntermediateResultReceiver_OnSectionStarted"
-                                               "', argument "
-                                               "1"
-                                               " of type '"
-                                               "dynamsoft::intermediate_results::CAbstractIntermediateResultReceiver *"
-                                               "'");
-    }
-    arg1 = reinterpret_cast<dynamsoft::intermediate_results::CAbstractIntermediateResultReceiver *>(argp1);
-    res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_dynamsoft__intermediate_results__CIntermediateResultUnit, 0 | 0);
-    if (!SWIG_IsOK(res2))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '"
-                                               "CAbstractIntermediateResultReceiver_OnSectionStarted"
-                                               "', argument "
-                                               "2"
-                                               " of type '"
-                                               "dynamsoft::intermediate_results::CIntermediateResultUnit *"
-                                               "'");
-    }
-    arg2 = reinterpret_cast<dynamsoft::intermediate_results::CIntermediateResultUnit *>(argp2);
-    res3 = SWIG_ConvertPtr(swig_obj[2], &argp3, SWIGTYPE_p_IntermediateResultExtraInfo, 0 | 0);
-    if (!SWIG_IsOK(res3))
-    {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '"
-                                               "CAbstractIntermediateResultReceiver_OnSectionStarted"
-                                               "', argument "
-                                               "3"
-                                               " of type '"
-                                               "IntermediateResultExtraInfo const *"
-                                               "'");
-    }
-    arg3 = reinterpret_cast<IntermediateResultExtraInfo *>(argp3);
-    (arg1)->OnSectionStarted(arg2, (IntermediateResultExtraInfo const *)arg3);
     resultobj = SWIG_Py_Void();
     return resultobj;
   fail:
@@ -19171,7 +19082,6 @@ SWIGINTERN PyObject *_wrap_COriginalImageResultItem_Release(PyObject *self, PyOb
       // {"CAbstractIntermediateResultReceiver_OnTaskResultsReceived", _wrap_CAbstractIntermediateResultReceiver_OnTaskResultsReceived, METH_VARARGS, NULL},
       // {"CAbstractIntermediateResultReceiver_OnUnitResultReceived", _wrap_CAbstractIntermediateResultReceiver_OnUnitResultReceived, METH_VARARGS, NULL},
       // {"CAbstractIntermediateResultReceiver_OnTaskResultsReceivedInner", _wrap_CAbstractIntermediateResultReceiver_OnTaskResultsReceivedInner, METH_VARARGS, NULL},
-      {"CAbstractIntermediateResultReceiver_OnSectionStarted", _wrap_CAbstractIntermediateResultReceiver_OnSectionStarted, METH_VARARGS, NULL},
       {"CAbstractIntermediateResultReceiver_register", CAbstractIntermediateResultReceiver_swigregister, METH_O, NULL},
       {"new_CPoint", _wrap_new_CPoint, METH_VARARGS, NULL},
       {"delete_CPoint", _wrap_delete_CPoint, METH_O, NULL},
@@ -19345,7 +19255,6 @@ SWIGINTERN PyObject *_wrap_COriginalImageResultItem_Release(PyObject *self, PyOb
   static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *", 0, 0, (void *)0, 0};
   static swig_type_info _swigt__p_dynamsoft__basic_structures__CCapturedResultBase = {"_p_dynamsoft__basic_structures__CCapturedResultBase", "dynamsoft::basic_structures::CCapturedResultBase *", 0, 0, (void *)0, 0};
   static swig_type_info _swigt__p_dynamsoft__intermediate_results__CAuxiliaryRegionElement = {"_p_dynamsoft__intermediate_results__CAuxiliaryRegionElement", "dynamsoft::intermediate_results::CPredetectedRegionElement *", 0, 0, (void *)0, 0};
-static swig_type_info _swigt__p_MeasureUnit = {"_p_MeasureUnit", "MeasureUnit *|enum MeasureUnit *", 0, 0, (void *)0, 0};
 
   static swig_type_info *swig_type_initial[] = {
       &_swigt__p_BufferOverflowProtectionMode,
@@ -19416,7 +19325,6 @@ static swig_type_info _swigt__p_MeasureUnit = {"_p_MeasureUnit", "MeasureUnit *|
       &_swigt__p_unsigned_char,
       &_swigt__p_dynamsoft__basic_structures__CCapturedResultBase,
       &_swigt__p_dynamsoft__intermediate_results__CAuxiliaryRegionElement,
-      &_swigt__p_MeasureUnit,
   };
 
   static swig_cast_info _swigc__p_BufferOverflowProtectionMode[] = {{&_swigt__p_BufferOverflowProtectionMode, 0, 0, 0}, {0, 0, 0, 0}};
@@ -19487,7 +19395,6 @@ static swig_type_info _swigt__p_MeasureUnit = {"_p_MeasureUnit", "MeasureUnit *|
   static swig_cast_info _swigc__p_p_int[] = {{&_swigt__p_p_int, 0, 0, 0}, {0, 0, 0, 0}};
   static swig_cast_info _swigc__p_unsigned_char[] = {{&_swigt__p_unsigned_char, 0, 0, 0}, {0, 0, 0, 0}};
   static swig_cast_info _swigc__p_dynamsoft__basic_structures__CCapturedResultBase[] = {{&_swigt__p_dynamsoft__basic_structures__CCapturedResultBase, 0, 0, 0}, {0, 0, 0, 0}};
-  static swig_cast_info _swigc__p_MeasureUnit[] = {{&_swigt__p_MeasureUnit, 0, 0, 0}, {0, 0, 0, 0}};
 
   static swig_cast_info *swig_cast_initial[] = {
       _swigc__p_BufferOverflowProtectionMode,
@@ -19558,7 +19465,6 @@ static swig_type_info _swigt__p_MeasureUnit = {"_p_MeasureUnit", "MeasureUnit *|
       _swigc__p_unsigned_char,
       _swigc__p_dynamsoft__basic_structures__CCapturedResultBase,
       _swigc__p_dynamsoft__intermediate_results__CAuxiliaryRegionElement,
-      _swigc__p_MeasureUnit,
   };
 
   /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (END) -------- */
@@ -20226,7 +20132,6 @@ void
   SWIG_Python_SetConstant(d, "GEM_SKIP", SWIG_From_int(static_cast<int>(GEM_SKIP)));
   SWIG_Python_SetConstant(d, "PDFRM_VECTOR", SWIG_From_int(static_cast<int>(PDFRM_VECTOR)));
   SWIG_Python_SetConstant(d, "PDFRM_RASTER", SWIG_From_int(static_cast<int>(PDFRM_RASTER)));
-  SWIG_Python_SetConstant(d, "PDFRM_MULTIMODAL", SWIG_From_int(static_cast<int>(PDFRM_MULTIMODAL)));
   SWIG_Python_SetConstant(d, "PDFRM_REV", SWIG_From_int(static_cast<int>(PDFRM_REV)));
   SWIG_Python_SetConstant(d, "RDS_RASTERIZED_PAGES", SWIG_From_int(static_cast<int>(RDS_RASTERIZED_PAGES)));
   SWIG_Python_SetConstant(d, "RDS_EXTRACTED_IMAGES", SWIG_From_int(static_cast<int>(RDS_EXTRACTED_IMAGES)));
@@ -20322,8 +20227,6 @@ void
   SWIG_Python_SetConstant(d, "IFF_PNG", SWIG_From_int(static_cast<int>(IFF_PNG)));
   SWIG_Python_SetConstant(d, "IFF_BMP", SWIG_From_int(static_cast<int>(IFF_BMP)));
   SWIG_Python_SetConstant(d, "IFF_PDF", SWIG_From_int(static_cast<int>(IFF_PDF)));
-  SWIG_Python_SetConstant(d, "MU_PIXEL", SWIG_From_int(static_cast<int>(MU_PIXEL)));
-  SWIG_Python_SetConstant(d, "MU_PERCENTAGE", SWIG_From_int(static_cast<int>(MU_PERCENTAGE)));
   globals = SWIG_globals();
   if (!globals)
   {

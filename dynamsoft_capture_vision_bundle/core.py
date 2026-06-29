@@ -1,4 +1,4 @@
-__version__ = "4.6.10.0625"
+__version__ = "4.0.40.1265"
 
 import sys
 
@@ -182,7 +182,6 @@ class EnumGrayscaleEnhancementMode(IntEnum):
 class EnumPDFReadingMode(IntEnum):
     PDFRM_VECTOR = _DynamsoftCore.PDFRM_VECTOR
     PDFRM_RASTER = _DynamsoftCore.PDFRM_RASTER
-    PDFRM_MULTIMODAL = _DynamsoftCore.PDFRM_MULTIMODAL
     PDFRM_REV = _DynamsoftCore.PDFRM_REV
 
 
@@ -306,10 +305,6 @@ class EnumImageFileFormat(IntEnum):
     IFF_PNG = _DynamsoftCore.IFF_PNG
     IFF_BMP = _DynamsoftCore.IFF_BMP
     IFF_PDF = _DynamsoftCore.IFF_PDF
-
-class EnumMeasureUnit(IntEnum):
-    MU_PIXEL = _DynamsoftCore.MU_PIXEL
-    MU_PERCENTAGE = _DynamsoftCore.MU_PERCENTAGE
 
 IDENTITY_MATRIX = [
     1.0, 0.0, 0.0,
@@ -1375,7 +1370,7 @@ class PDFReadingParameter:
         Initializes a new instance of the PDFReadingParameter class.
 
         This constructor initializes the properties with default values:
-        mode: 3 (EnumPDFReadingMode.PDFRM_MULTIMODAL.value)
+        mode: 2 (EnumPDFReadingMode.PDFRM_RASTER.value)
         dpi: 300
         raster_data_source: 0 (EnumRasterDataSource.RDS_RASTERIZED_PAGES.value)
         """

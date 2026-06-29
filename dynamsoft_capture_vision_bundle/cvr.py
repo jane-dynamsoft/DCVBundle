@@ -1,4 +1,4 @@
-__version__ = "3.6.10.0625"
+__version__ = "3.4.30.1265"
 
 if __package__ or "." in __name__:
     from .core import *
@@ -730,9 +730,6 @@ class IntermediateResultReceiver:
     def on_unit_result_received(self, unit: IntermediateResultUnit, info: IntermediateResultExtraInfo) -> None:
         pass
 
-    def on_barcode_decoding_section_started(self, result: "LocalizedBarcodesUnit", info: IntermediateResultExtraInfo) -> None:
-        return _DynamsoftCaptureVisionRouter.CIntermediateResultReceiver_OnBarcodeDecodingSectionStarted(self, result, info)
-
     def get_observation_parameters(self) -> ObservationParameters:
         return _DynamsoftCaptureVisionRouter.CIntermediateResultReceiver_GetObservationParameters(self)
 
@@ -957,7 +954,7 @@ class CaptureVisionRouter:
         ret = _DynamsoftCaptureVisionRouter.CCaptureVisionRouter_Capture(self, image, template_name)
         return ret
 
-    def capture_multi_pages(self, file: Union[str, bytes, "FileFetcher"], template_name: str = "") -> CapturedResultArray:
+    def capture_multi_pages(self, file: Union[str, bytes], template_name: str = "") -> CapturedResultArray:
         """
         Processes a multi-page image file to derive important information. It can optionally use a specified template for the capture.
 
@@ -972,17 +969,6 @@ class CaptureVisionRouter:
             return _DynamsoftCaptureVisionRouter.CCaptureVisionRouter_CaptureMultiPages(self, file, template_name)
         elif isinstance(file, bytes):
             return _DynamsoftCaptureVisionRouter.CCaptureVisionRouter_CaptureMultiPagesFromMemory(self, file, template_name)
-
-        import importlib
-        try:
-            base_pkg = __package__.split('.', 1)[0]
-            utilityModule = importlib.import_module(f"{base_pkg}.utility")
-            FileFetcher = getattr(utilityModule, "FileFetcher", None)
-        except (ImportError, AttributeError) as e:
-             FileFetcher = None
-
-        if FileFetcher and isinstance(file, FileFetcher):
-            return _DynamsoftCaptureVisionRouter.CCaptureVisionRouter_CaptureMultiPagesFromFileFetcher(self, file, template_name)
         else:
             raise TypeError("The input must be a string or bytes")
 

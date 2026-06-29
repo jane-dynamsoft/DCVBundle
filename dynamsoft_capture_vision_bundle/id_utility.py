@@ -1,4 +1,4 @@
-__version__ = "1.0.10.0625"
+__version__ = "1.0.10.1265"
 
 if __package__ or "." in __name__:
     from .cvr import *

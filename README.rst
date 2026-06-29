@@ -29,7 +29,7 @@ is an aggregating SDK of a series of specific functional products including:
 Version
 -------
 
--  3.6.1000
+-  3.4.3000
 
 Supported Platforms
 -------------------
