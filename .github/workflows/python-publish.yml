@@ -1,0 +1,60 @@
+
+name: Build and upload to PyPI
+
+on: [push, pull_request]
+
+jobs:
+        
+  build_wheels:
+    name: Build wheels on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, windows-2022]
+#         os: [ubuntu-20.04]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+            python-version: '3.x'
+       
+      - name: Set up QEMU
+        if: matrix.os == 'ubuntu-22.04'
+        uses: docker/setup-qemu-action@v2
+      - name: Build wheels
+ 
+        uses: pypa/cibuildwheel@v3.3.0
+       
+
+      
+      
+#      - name: Run test.py in develop mode
+#        run: |
+#          python setup_setuptools.py develop
+#           python -m pip install opencv-python
+#           python --version
+#           python test.py
+      - name: Publish wheel
+        uses: actions/upload-artifact@v4
+        with:
+           name: wheel_${{ matrix.os }}
+           path: ./wheelhouse/
+  build_sdist:
+    name: Build source distribution
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build sdist
+        run: pipx run build --sdist
+
+
+      - name: Publish package
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: dist/        
+
+
